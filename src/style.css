@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #10b981;
+  --color-secondary: #3b82f6;
+  --color-dark: #0f172a;
+  --color-light: #f8fafc;
+  --color-dark-card: #1e293b;
+
+  --font-sans: 'Inter', sans-serif;
+
+  --animate-blob: blob 7s infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.translate-z-10 {
+  transform: translateZ(10px);
+}
+
+:root {
+  /* Common Defaults */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Light Theme (Default/Cheerful) */
+  --color-background: #ffffff; /* Pure white for maximum contrast */
+  --color-surface: #f8fafc; /* Slate 50 */
+  --color-surface-trans: rgba(248, 250, 252, 0.85); /* More opaque for readability */
+  --color-text: #020617; /* Slate 950 - Near Black */
+  --color-text-muted: #475569; /* Slate 600 - Dark Grey */
+  --color-border: rgba(15, 23, 42, 0.1); /* Slight dark border */
+  
+  --color-accent-primary: #0284c7; /* Sky 600 - Darker for visibility on white */
+  --color-accent-secondary: #7c3aed; /* Violet 600 - Darker for visibility */
+}
+
+:root.dark {
+  /* Dark Theme (Professional/Abstract) */
+  --color-background: #020617; /* Slate 950 - Deepest Dark */
+  --color-surface: #0f172a; /* Slate 900 */
+  --color-surface-trans: rgba(15, 23, 42, 0.85);
+  --color-text: #f8fafc; /* Slate 50 - Near White */
+  --color-text-muted: #cbd5e1; /* Slate 300 - Light Grey */
+  --color-border: rgba(255, 255, 255, 0.15);
+
+  --color-accent-primary: #34d399; /* Emerald 400 - Brigher for visibility on dark */
+  --color-accent-secondary: #60a5fa; /* Blue 400 */
+}
+
+/* Base Body Styles */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
