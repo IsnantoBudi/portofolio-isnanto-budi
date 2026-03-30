@@ -2,6 +2,7 @@ import profileImg from '../assets/foto profil.png';
 import projectAndroidImg from '../assets/project menejemen android.png';
 import projectSchoolImg from '../assets/project menejemen sekolah.png';
 import projectWebImg from '../assets/project menejemen web.png';
+import tenantMasterHomeImg from '../assets/tenant_master/home tenant master.png';
 
 export interface Experience {
   company: string;
@@ -16,6 +17,7 @@ export interface Project {
   technologies: string[];
   link?: string;
   image?: string;
+  detailId?: string;
 }
 
 export interface Skill {
@@ -83,17 +85,24 @@ export const portfolioData: Profile = {
   ],
   projects: [
     {
-      title: "Sistem Manajemen Proyek",
-      description: "Sistem monitoring dan manajemen proyek berbasis web & mobile.",
-      technologies: ["Angular", "Flutter", "REST API", "SQL"],
-      link: "#",
-      image: projectWebImg // Using web img as placeholder for now
+      title: "TenantMaster Cloud",
+      description: "Platform manajemen multi-tenant untuk aplikasi SaaS dengan arsitektur microservices B2B.",
+      technologies: ["Next.js", "Tailwind CSS", "Go", "PostgreSQL"],
+      detailId: 'tenant-master',
+      image: tenantMasterHomeImg
     },
     {
-      title: "Manajemen Android",
-      description: "Aplikasi mobile manajemen proyek untuk klien dan admin.",
-      technologies: ["Flutter", "Dart", "Android"],
-      link: "#",
+      title: "Sistem Manajemen Asuransi (Web)",
+      description: "Core system manajemen asuransi untuk administrasi polis, klaim, dan Role-Based Access Control (RBAC).",
+      technologies: ["Angular", "REST API", "SQL", "TypeScript"],
+      detailId: 'insurance-web',
+      image: projectWebImg
+    },
+    {
+      title: "Aplikasi Asuransi (Mobile)",
+      description: "Aplikasi mobile khusus klien asuransi untuk akses e-polis digital dan pengajuan klaim secara real-time.",
+      technologies: ["Flutter", "Dart", "Android", "REST API"],
+      detailId: 'insurance-mobile',
       image: projectAndroidImg
     },
     {
@@ -102,6 +111,7 @@ export const portfolioData: Profile = {
       technologies: ["Web", "Database"],
       link: "#",
       image: projectSchoolImg
-    }
+    },
+
   ]
 };

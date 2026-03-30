@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { portfolioData } from '../data/portfolio';
-import { X, ZoomIn } from 'lucide-vue-next';
+import { X, ZoomIn, ArrowRight } from 'lucide-vue-next';
+import { useNavigation } from '../composables/useNavigation';
+
+const { navigateTo } = useNavigation();
 
 const selectedImage = ref<string | null>(null);
 
@@ -65,10 +68,17 @@ const closeLightbox = () => {
               {{ project.description }}
             </p>
             
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 mb-6">
               <span v-for="tech in project.technologies" :key="tech" class="px-3 py-1 text-xs font-semibold bg-[var(--color-accent-primary)]/10 text-[var(--color-accent-primary)] border border-[var(--color-accent-primary)]/20 rounded-full group-hover:bg-[var(--color-accent-primary)]/20 transition-colors">
                 {{ tech }}
               </span>
+            </div>
+            
+            <div class="mt-auto pt-4 border-t border-[var(--color-border)]/50">
+              <button v-if="project.detailId" @click.stop="navigateTo(project.detailId)" class="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-accent-primary)] hover:text-[var(--color-accent-secondary)] transition-colors">
+                Lihat Detail
+                <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
           </div>
         </div>
