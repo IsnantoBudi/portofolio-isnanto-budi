@@ -3,8 +3,6 @@ import { defineAsyncComponent, ref, onMounted, onUnmounted } from 'vue';
 
 import NavBar from './components/NavBar.vue';
 import HeroSection from './components/HeroSection.vue';
-import { SpeedInsights } from '@vercel/speed-insights/vue';
-
 
 // Async components (Below the fold)
 const ThreeBackground = defineAsyncComponent(() => import('./components/ThreeBackground.vue'));
@@ -43,7 +41,6 @@ onUnmounted(() => {
     <ThreeBackground v-if="!isMobile" />
     <NavBar v-if="currentView === 'home'" />
     <main v-if="currentView === 'home'">
-      <SpeedInsights />
       <HeroSection />
       <AboutSection />
       <ExperienceSection />
