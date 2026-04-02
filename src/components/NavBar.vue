@@ -69,7 +69,7 @@ onUnmounted(() => {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex-shrink-0 transition-transform duration-300 hover:scale-105">
-          <a href="#" class="flex items-center gap-1 group">
+          <a href="#" aria-label="Beranda" class="flex items-center gap-1 group">
             <div class="relative flex items-center justify-center w-10 h-10 bg-[var(--color-surface)] rounded-xl border border-[var(--color-border)] shadow-sm group-hover:shadow-[var(--color-accent-primary)]/20 group-hover:border-[var(--color-accent-primary)]/50 transition-all duration-300 overflow-hidden">
                <span class="absolute inset-0 bg-gradient-to-br from-[var(--color-accent-primary)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                <span class="font-bold text-xl bg-gradient-to-br from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] bg-clip-text text-transparent">IB</span>
@@ -101,7 +101,7 @@ onUnmounted(() => {
           </div>
 
           <!-- Theme Toggle -->
-          <button @click="toggleTheme" class="p-2 rounded-full hover:bg-[var(--color-surface)] transition-all duration-300 text-[var(--color-text)] hover:shadow-md hover:rotate-12 border border-transparent hover:border-[var(--color-border)]">
+          <button @click="toggleTheme" aria-label="Toggle tema gelap/terang" class="p-2 rounded-full hover:bg-[var(--color-surface)] transition-all duration-300 text-[var(--color-text)] hover:shadow-md hover:rotate-12 border border-transparent hover:border-[var(--color-border)]">
             <Sun v-if="isDark" class="w-5 h-5 text-yellow-400 fill-current" />
             <Moon v-else class="w-5 h-5 text-indigo-600 fill-current" />
           </button>
@@ -109,13 +109,14 @@ onUnmounted(() => {
         
         <div class="-mr-2 flex md:hidden items-center gap-4">
            <!-- Mobile Theme Toggle -->
-          <button @click="toggleTheme" class="p-2 rounded-full hover:bg-[var(--color-surface)] transition-colors text-[var(--color-text)]">
+          <button @click="toggleTheme" aria-label="Toggle tema gelap/terang" class="p-2 rounded-full hover:bg-[var(--color-surface)] transition-colors text-[var(--color-text)]">
             <Sun v-if="isDark" class="w-5 h-5" />
             <Moon v-else class="w-5 h-5" />
           </button>
 
           <button
             @click="toggleMenu"
+            aria-label="Toggle menu navigasi"
             class="inline-flex items-center justify-center p-2 rounded-md text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface)] focus:outline-none transition-colors"
           >
             <Menu v-if="!isOpen" class="h-6 w-6" />

@@ -104,6 +104,7 @@ onUnmounted(() => {
           <a
             :href="portfolioData.socials.linkedin"
             target="_blank"
+            aria-label="Profil LinkedIn"
             class="group p-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 backdrop-blur-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent-primary)] hover:border-[var(--color-accent-primary)]/40 hover:bg-[var(--color-accent-primary)]/10 transition-all duration-300 hover:-translate-y-1"
           >
             <Linkedin class="w-5 h-5" />
@@ -112,12 +113,14 @@ onUnmounted(() => {
             v-if="portfolioData.socials.github"
             :href="portfolioData.socials.github"
             target="_blank"
+            aria-label="Profil GitHub"
             class="group p-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 backdrop-blur-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent-primary)] hover:border-[var(--color-accent-primary)]/40 hover:bg-[var(--color-accent-primary)]/10 transition-all duration-300 hover:-translate-y-1"
           >
             <Github class="w-5 h-5" />
           </a>
           <a
             :href="`mailto:${portfolioData.socials.email}`"
+            aria-label="Kirim Email"
             class="group p-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 backdrop-blur-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent-primary)] hover:border-[var(--color-accent-primary)]/40 hover:bg-[var(--color-accent-primary)]/10 transition-all duration-300 hover:-translate-y-1"
           >
             <Mail class="w-5 h-5" />
