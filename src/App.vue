@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineAsyncComponent } from 'vue';
+import { defineAsyncComponent, ref, onMounted, onUnmounted } from 'vue';
 
 import NavBar from './components/NavBar.vue';
 import HeroSection from './components/HeroSection.vue';
@@ -20,11 +20,25 @@ const InsuranceMobileDetail = defineAsyncComponent(() => import('./components/pr
 import { useNavigation } from './composables/useNavigation';
 
 const { currentView } = useNavigation();
+
+const isMobile = ref(window.innerWidth <= 768);
+
+const handleResize = () => {
+  isMobile.value = window.innerWidth <= 768;
+};
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize, { passive: true });
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize);
+});
 </script>
 
 <template>
   <div class="min-h-screen text-[var(--color-text)] selection:bg-primary selection:text-white transition-colors duration-500">
-    <ThreeBackground />
+    <ThreeBackground v-if="!isMobile" />
     <NavBar v-if="currentView === 'home'" />
     <main v-if="currentView === 'home'">
       <HeroSection />
