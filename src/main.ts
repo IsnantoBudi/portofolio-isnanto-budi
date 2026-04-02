@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import { injectSpeedInsights } from '@vercel/speed-insights';
+import { injectSpeedInsights } from '@vercel/speed-insights'
 
-injectSpeedInsights();
+injectSpeedInsights()
 
 createApp(App).mount('#app')
