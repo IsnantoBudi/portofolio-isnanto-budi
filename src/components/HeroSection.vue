@@ -76,8 +76,8 @@ onUnmounted(() => {
         </p>
 
         <!-- Description -->
-        <p class="max-w-xl mx-auto text-[var(--color-text-muted)] text-base md:text-lg leading-relaxed animate-fade-in-up animation-delay-300">
-          Membangun pengalaman digital yang cepat, indah, dan berdampak — dari SaaS enterprise hingga aplikasi mobile.
+        <p class="max-w-2xl mx-auto text-[var(--color-text-muted)] text-base md:text-lg leading-relaxed animate-fade-in-up animation-delay-300">
+          Spesialis dalam membangun pengalaman digital berperforma tinggi yang cepat, estetik, dan berdampak. Berpengalaman dalam arsitektur SaaS enterprise, solusi finansial (Insurance Tech), hingga aplikasi mobile modern menggunakan ekosistem Vue.js, TypeScript, dan Node.js.
         </p>
 
         <!-- CTA Buttons -->
