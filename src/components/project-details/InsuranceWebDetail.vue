@@ -53,12 +53,12 @@ const techStack = [
 
       <!-- Hero Section -->
       <div class="mb-20 text-center space-y-6">
-        <div class="inline-flex items-center justify-center px-4 py-1.5 mb-2 rounded-full border border-[var(--color-accent-primary)]/30 bg-[var(--color-accent-primary)]/10 text-[var(--color-accent-primary)] text-sm md:text-md font-semibold font-mono tracking-wide">
-          WEB ADMIN | ENTERPRISE | ANGULAR
+        <div class="inline-flex items-center justify-center px-4 py-1.5 mb-2 rounded-full border border-[var(--color-accent-primary)]/30 bg-[var(--color-accent-primary)]/10 text-[var(--color-accent-primary)] text-xs font-bold font-mono tracking-widest uppercase">
+          Web Admin · Enterprise · Angular
         </div>
-        <h1 class="text-4xl md:text-6xl font-bold text-[var(--color-text)] tracking-tight leading-tight max-w-4xl mx-auto">
-          Core System <br class="hidden md:block"/>
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)]">Manajemen Asuransi</span>
+        <h1 class="font-display text-5xl md:text-7xl font-black text-[var(--color-text)] tracking-tight leading-none max-w-4xl mx-auto" style="letter-spacing: -0.03em;">
+          Core System<br class="hidden md:block"/>
+          <span class="bg-gradient-to-r from-[var(--color-accent-primary)] to-[var(--color-accent-secondary)] bg-clip-text text-transparent">Manajemen Asuransi.</span>
         </h1>
         <p class="text-lg md:text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed">
           Platform back-office komprehensif yang dirancang untuk mengelola seluruh siklus hidup polis asuransi, proses klaim, dan administrasi operasional dengan sistem hak akses yang terkontrol ketat (RBAC).
@@ -66,11 +66,11 @@ const techStack = [
       </div>
 
       <!-- Detail Architecture & Image block -->
-      <div class="mb-24 rounded-3xl bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-bg)] border border-[var(--color-border)] p-8 md:p-12 shadow-2xl overflow-hidden relative">
-        <div class="absolute inset-0 bg-grid-[var(--color-accent-primary)]/[0.02] bg-[size:30px_30px]"></div>
+      <div class="mb-24 rounded-3xl bg-gradient-to-br from-[var(--color-surface)] to-[var(--color-background)] border border-[var(--color-border)] p-8 md:p-12 shadow-2xl overflow-hidden relative">
+        <div class="absolute inset-0 dot-grid text-[var(--color-border)] opacity-50 rounded-3xl"></div>
         <div class="relative z-10 flex flex-col lg:flex-row items-center gap-12">
           <div class="w-full lg:w-1/2 space-y-6">
-            <h3 class="text-3xl font-bold text-[var(--color-text)]">Admin Dashboard Terpusat</h3>
+            <h3 class="font-display text-3xl font-black text-[var(--color-text)] tracking-tight">Admin Dashboard Terpusat</h3>
             <p class="text-[var(--color-text-muted)] leading-relaxed">
               Mendigitalisasi pengelolaan dokumen asuransi manual menjadi alur kerja web yang efisien. Memudahkan tim internal untuk melakukan validasi tanpa memilah tumpukan kertas fisik.
             </p>
@@ -95,7 +95,7 @@ const techStack = [
 
       <!-- Feature Highlight / Modules -->
       <div class="mb-24">
-        <h2 class="text-3xl font-bold text-[var(--color-text)] mb-10 text-center">Fitur & Modul Inti</h2>
+        <h2 class="font-display text-3xl md:text-4xl font-black text-[var(--color-text)] mb-10 text-center tracking-tight">Fitur &amp; Modul Inti</h2>
         <div class="grid md:grid-cols-3 gap-6">
           <div v-for="(mod, index) in modules" :key="index" class="p-8 rounded-3xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-accent-primary)]/50 transition-colors hover:shadow-xl hover:shadow-[var(--color-accent-primary)]/10 group">
             <div class="w-14 h-14 bg-[var(--color-accent-primary)]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[var(--color-accent-primary)] group-hover:text-white text-[var(--color-accent-primary)] transition-colors">
@@ -111,7 +111,7 @@ const techStack = [
 
       <!-- Tech Stack -->
       <div>
-        <h2 class="text-3xl font-bold text-[var(--color-text)] mb-10 text-center">Spesifikasi Teknologi</h2>
+        <h2 class="font-display text-3xl md:text-4xl font-black text-[var(--color-text)] mb-10 text-center tracking-tight">Spesifikasi Teknologi</h2>
         <div class="grid md:grid-cols-3 gap-6">
           <div v-for="(stack, index) in techStack" :key="index" class="flex items-center gap-4 p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)]">
             <div class="p-3 bg-[var(--color-accent-primary)]/10 rounded-xl text-[var(--color-accent-primary)]">
@@ -129,9 +129,4 @@ const techStack = [
   </div>
 </template>
 
-<style scoped>
-.bg-grid-\[var\(--color-accent-primary\)\]\/\[0\.02\] {
-  background-image: linear-gradient(to right, rgba(var(--color-accent-primary-rgb), 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(var(--color-accent-primary-rgb), 0.02) 1px, transparent 1px);
-}
-</style>
+
