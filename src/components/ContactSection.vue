@@ -58,8 +58,8 @@ import { Mail, Linkedin, Github, ArrowUpRight } from 'lucide-vue-next';
 
         <!-- Footer -->
         <div class="mt-20 pt-8 border-t border-[var(--color-border)] flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-[var(--color-text-muted)]">
-          <p>© {{ new Date().getFullYear() }} {{ portfolioData.name }}. Crafted with care.</p>
-          <p class="font-mono text-xs">Vue 3 · TypeScript · Tailwind CSS</p>
+          <p>© {{ new Date().getFullYear() }} {{ portfolioData.name }}.</p>
+          <!-- <p class="font-mono text-xs">Vue 3 · TypeScript · Tailwind CSS</p> -->
         </div>
       </div>
     </div>

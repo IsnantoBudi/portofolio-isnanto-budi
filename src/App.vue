@@ -1,15 +1,22 @@
 <script setup lang="ts">
+import { defineAsyncComponent } from 'vue';
+
 import NavBar from './components/NavBar.vue';
 import HeroSection from './components/HeroSection.vue';
-import AboutSection from './components/AboutSection.vue';
-import ExperienceSection from './components/ExperienceSection.vue';
-import SkillsSection from './components/SkillsSection.vue';
-import ProjectsSection from './components/ProjectsSection.vue';
-import ContactSection from './components/ContactSection.vue';
-import ThreeBackground from './components/ThreeBackground.vue';
-import TenantMasterDetail from './components/project-details/TenantMasterDetail.vue';
-import InsuranceWebDetail from './components/project-details/InsuranceWebDetail.vue';
-import InsuranceMobileDetail from './components/project-details/InsuranceMobileDetail.vue';
+
+// Async components (Below the fold)
+const ThreeBackground = defineAsyncComponent(() => import('./components/ThreeBackground.vue'));
+const AboutSection = defineAsyncComponent(() => import('./components/AboutSection.vue'));
+const ExperienceSection = defineAsyncComponent(() => import('./components/ExperienceSection.vue'));
+const SkillsSection = defineAsyncComponent(() => import('./components/SkillsSection.vue'));
+const ProjectsSection = defineAsyncComponent(() => import('./components/ProjectsSection.vue'));
+const ContactSection = defineAsyncComponent(() => import('./components/ContactSection.vue'));
+
+// Detail pages (only loaded when clicked)
+const TenantMasterDetail = defineAsyncComponent(() => import('./components/project-details/TenantMasterDetail.vue'));
+const InsuranceWebDetail = defineAsyncComponent(() => import('./components/project-details/InsuranceWebDetail.vue'));
+const InsuranceMobileDetail = defineAsyncComponent(() => import('./components/project-details/InsuranceMobileDetail.vue'));
+
 import { useNavigation } from './composables/useNavigation';
 
 const { currentView } = useNavigation();
