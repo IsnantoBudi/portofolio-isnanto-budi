@@ -2,7 +2,7 @@
 import { ArrowLeft, CheckCircle2, Shield, FileText, Activity, Code2, Database } from 'lucide-vue-next';
 import { useNavigation } from '../../composables/useNavigation';
 import { onMounted } from 'vue';
-import projectWebImg from '../../assets/project menejemen web.png';
+import projectWebImg from '../../assets/project menejemen web.webp';
 
 const { navigateTo } = useNavigation();
 
