@@ -1,7 +1,8 @@
-import profileImg from '../assets/foto profil.png';
-import projectAndroidImg from '../assets/project menejemen android.png';
-import projectSchoolImg from '../assets/project menejemen sekolah.png';
-import projectWebImg from '../assets/project menejemen web.png';
+import profileDarkImg from '../assets/foto profil_dark.webp';
+// import profileLightImg from '../assets/foto profil_light.webp';
+import projectAndroidImg from '../assets/project menejemen android.webp';
+import projectSchoolImg from '../assets/project menejemen sekolah.webp';
+import projectWebImg from '../assets/project menejemen web.webp';
 import tenantMasterHomeImg from '../assets/tenant_master/home tenant master.png';
 
 export interface Experience {
@@ -30,7 +31,8 @@ export interface Skill {
 export interface Profile {
   name: string;
   title: string;
-  profileImage: string;
+  profileImageDark: string;
+  profileImageLight: string;
   about: string[];
   socials: {
     linkedin: string;
@@ -45,7 +47,8 @@ export interface Profile {
 export const portfolioData: Profile = {
   name: "Isnanto Budi Nurrahman",
   title: "Full-Stack Developer",
-  profileImage: profileImg,
+  profileImageDark: profileDarkImg,
+  profileImageLight: profileDarkImg,
   about: [
     "Full-Stack Developer dengan pengalaman profesional lebih dari 2 tahun dalam pengembangan aplikasi web dan mobile.",
     "Berpengalaman menggunakan Angular dan Flutter untuk membangun sistem berbasis REST API dengan fokus pada maintainability dan kebutuhan bisnis.",

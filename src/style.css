@@ -19,29 +19,61 @@
   --animate-grid-in: gridReveal 1.2s ease-out forwards;
 
   @keyframes float {
-    0%   { transform: translateY(0px); }
-    50%  { transform: translateY(-18px); }
-    100% { transform: translateY(0px); }
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-18px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
   }
 
   @keyframes shimmer {
-    0%   { background-position: -200% center; }
-    100% { background-position:  200% center; }
+    0% {
+      background-position: -200% center;
+    }
+
+    100% {
+      background-position: 200% center;
+    }
   }
 
   @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   @keyframes gridReveal {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes spotlightPulse {
-    0%, 100% { opacity: 0.6; }
-    50%       { opacity: 1; }
+
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+
+    50% {
+      opacity: 1;
+    }
   }
 }
 
@@ -80,12 +112,10 @@
 
 /* Shimmer button effect */
 .shimmer-btn {
-  background: linear-gradient(
-    105deg,
-    transparent 40%,
-    rgba(255, 255, 255, 0.25) 50%,
-    transparent 60%
-  );
+  background: linear-gradient(105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.25) 50%,
+      transparent 60%);
   background-size: 200% auto;
   animation: shimmer 2.5s linear infinite;
 }
@@ -101,15 +131,17 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Light Theme */
-  --color-background:     #f9fafb;
-  --color-surface:        #ffffff;
-  --color-surface-trans:  rgba(255, 255, 255, 0.85);
-  --color-text:           #0d1117;
-  --color-text-muted:     #4b5563;
-  --color-border:         rgba(15, 23, 42, 0.1);
+  --color-background: #f9fafb;
+  --color-surface: #ffffff;
+  --color-surface-trans: rgba(255, 255, 255, 0.85);
+  --color-text: #0d1117;
+  --color-text-muted: #4b5563;
+  --color-border: rgba(15, 23, 42, 0.1);
 
-  --color-accent-primary:   #0369a1;   /* Sky 700 — confident, deep blue */
-  --color-accent-secondary: #6d28d9;   /* Violet 700 — electric accent */
+  --color-accent-primary: #0369a1;
+  /* Sky 700 — confident, deep blue */
+  --color-accent-secondary: #6d28d9;
+  /* Violet 700 — electric accent */
 
   /* Spotlight accent for hero (light mode) */
   --spotlight-color: rgba(3, 105, 161, 0.1);
@@ -117,15 +149,20 @@
 
 :root.dark {
   /* Dark Theme */
-  --color-background:     #08101e;    /* Deep navy — richer than slate-950 */
-  --color-surface:        #0f1c2e;    /* Slightly lifted surface */
-  --color-surface-trans:  rgba(15, 28, 46, 0.88);
-  --color-text:           #e2e8f0;    /* Slight warm tone */
-  --color-text-muted:     #94a3b8;
-  --color-border:         rgba(148, 163, 184, 0.12);
+  --color-background: #08101e;
+  /* Deep navy — richer than slate-950 */
+  --color-surface: #0f1c2e;
+  /* Slightly lifted surface */
+  --color-surface-trans: rgba(15, 28, 46, 0.88);
+  --color-text: #e2e8f0;
+  /* Slight warm tone */
+  --color-text-muted: #94a3b8;
+  --color-border: rgba(148, 163, 184, 0.12);
 
-  --color-accent-primary:   #38bdf8;   /* Sky 400 — vivid on dark */
-  --color-accent-secondary: #a78bfa;   /* Violet 400 — soft neon */
+  --color-accent-primary: #38bdf8;
+  /* Sky 400 — vivid on dark */
+  --color-accent-secondary: #a78bfa;
+  /* Violet 400 — soft neon */
 
   /* Spotlight accent for hero (dark mode) */
   --spotlight-color: rgba(56, 189, 248, 0.08);
@@ -167,11 +204,34 @@ body {
   opacity: 0;
 }
 
-.animation-delay-100  { animation-delay: 0.10s; }
-.animation-delay-200  { animation-delay: 0.20s; }
-.animation-delay-300  { animation-delay: 0.30s; }
-.animation-delay-400  { animation-delay: 0.42s; }
-.animation-delay-500  { animation-delay: 0.56s; }
-.animation-delay-600  { animation-delay: 0.72s; }
-.animation-delay-2000 { animation-delay: 2s; }
-.animation-delay-4000 { animation-delay: 4s; }
+.animation-delay-100 {
+  animation-delay: 0.10s;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.20s;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.30s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.42s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.56s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.72s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}

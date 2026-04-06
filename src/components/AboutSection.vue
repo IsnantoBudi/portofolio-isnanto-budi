@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { portfolioData } from '../data/portfolio';
+import { useTheme } from '../composables/useTheme';
+
+const { isDark } = useTheme();
 </script>
 
 <template>
@@ -21,7 +24,15 @@ import { portfolioData } from '../data/portfolio';
              <!-- Image -->
              <div class="relative z-10 flex items-end justify-center h-96">
                <img 
-                 :src="portfolioData.profileImage" 
+                 v-if="!isDark"
+                 :src="portfolioData.profileImageLight" 
+                 :alt="portfolioData.name"
+                 class="h-full w-auto object-cover drop-shadow-2xl transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2"
+                 style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);" 
+               />
+               <img 
+                 v-else
+                 :src="portfolioData.profileImageDark" 
                  :alt="portfolioData.name"
                  class="h-full w-auto object-cover drop-shadow-2xl transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2"
                  style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);" 

@@ -2,7 +2,7 @@
 import { ArrowLeft, CheckCircle2, Smartphone, FileCheck, Send, Bell, Activity } from 'lucide-vue-next';
 import { useNavigation } from '../../composables/useNavigation';
 import { onMounted } from 'vue';
-import projectAndroidImg from '../../assets/project menejemen android.png';
+import projectAndroidImg from '../../assets/project menejemen android.webp';
 
 const { navigateTo } = useNavigation();
 
