@@ -16,6 +16,7 @@ const ContactSection = defineAsyncComponent(() => import('./components/ContactSe
 const TenantMasterDetail = defineAsyncComponent(() => import('./components/project-details/TenantMasterDetail.vue'));
 const InsuranceWebDetail = defineAsyncComponent(() => import('./components/project-details/InsuranceWebDetail.vue'));
 const InsuranceMobileDetail = defineAsyncComponent(() => import('./components/project-details/InsuranceMobileDetail.vue'));
+const SyncBoardDetail = defineAsyncComponent(() => import('./components/project-details/SyncBoardDetail.vue'));
 
 import { useNavigation } from './composables/useNavigation';
 
@@ -56,6 +57,9 @@ onUnmounted(() => {
     </main>
     <main v-else-if="currentView === 'insurance-mobile'">
       <InsuranceMobileDetail />
+    </main>
+    <main v-else-if="currentView === 'sync-board'">
+      <SyncBoardDetail />
     </main>
   </div>
 </template>

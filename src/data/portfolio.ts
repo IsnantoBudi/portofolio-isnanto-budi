@@ -4,6 +4,7 @@ import projectAndroidImg from '../assets/project menejemen android.webp';
 import projectSchoolImg from '../assets/project menejemen sekolah.webp';
 import projectWebImg from '../assets/project menejemen web.webp';
 import tenantMasterHomeImg from '../assets/tenant_master/home tenant master.png';
+import syncBoardImg from '../assets/SyncBoard.webp';
 
 export interface Experience {
   company: string;
@@ -115,6 +116,14 @@ export const portfolioData: Profile = {
       link: "#",
       image: projectSchoolImg
     },
+    {
+      title: "SyncBoard",
+      description: "Real-time Collaborative Task Board dengan integrasi WebSockets dan database terdistribusi TiDB.",
+      technologies: ["Next.js", "Go", "TiDB", "WebSockets"],
+      detailId: 'sync-board',
+      image: syncBoardImg,
+      link: "https://sync-board-frontend-mu.vercel.app/"
+    }
 
   ]
 };
