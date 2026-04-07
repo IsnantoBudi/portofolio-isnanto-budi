@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": "20.x"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "build": "nuxt build",
@@ -16,9 +16,7 @@
     "@radix-ui/colors": "^3.0.0",
     "@vercel/speed-insights": "^2.0.0",
     "lucide-vue-next": "^0.563.0",
-    "three": "^0.182.0",
-    "vue": "latest",
-    "vue-router": "latest"
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
