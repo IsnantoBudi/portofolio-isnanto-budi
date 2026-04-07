@@ -17,6 +17,7 @@ const TenantMasterDetail = defineAsyncComponent(() => import('./components/proje
 const InsuranceWebDetail = defineAsyncComponent(() => import('./components/project-details/InsuranceWebDetail.vue'));
 const InsuranceMobileDetail = defineAsyncComponent(() => import('./components/project-details/InsuranceMobileDetail.vue'));
 const SyncBoardDetail = defineAsyncComponent(() => import('./components/project-details/SyncBoardDetail.vue'));
+const AjarVisualDetail = defineAsyncComponent(() => import('./components/project-details/AjarVisualDetail.vue'));
 
 import { useNavigation } from './composables/useNavigation';
 
@@ -60,6 +61,9 @@ onUnmounted(() => {
     </main>
     <main v-else-if="currentView === 'sync-board'">
       <SyncBoardDetail />
+    </main>
+    <main v-else-if="currentView === 'ajar-visual'">
+      <AjarVisualDetail />
     </main>
   </div>
 </template>

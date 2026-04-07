@@ -5,6 +5,7 @@ import projectSchoolImg from '../assets/project menejemen sekolah.webp';
 import projectWebImg from '../assets/project menejemen web.webp';
 import tenantMasterHomeImg from '../assets/tenant_master/home tenant master.png';
 import syncBoardImg from '../assets/SyncBoard.webp';
+import ajarVisualHomeImg from '../assets/AjarVisual_dashbord.png';
 
 export interface Experience {
   company: string;
@@ -96,6 +97,22 @@ export const portfolioData: Profile = {
       image: tenantMasterHomeImg
     },
     {
+      title: "SyncBoard",
+      description: "Real-time Collaborative Task Board dengan integrasi WebSockets dan database terdistribusi TiDB.",
+      technologies: ["Next.js", "Go", "TiDB", "WebSockets"],
+      detailId: 'sync-board',
+      image: syncBoardImg,
+      link: "https://sync-board-frontend-mu.vercel.app/"
+    },
+    {
+      title: "AjarVisual",
+      description: "Platform pembuatan lembar kerja (worksheet) pendidikan secara otomatis berbasis AI. Menghasilkan soal dan ilustrasi unik untuk berbagai tipe pertanyaan.",
+      technologies: ["Next.js", "Golang", "TiDB", "Gemini AI", "Pollinations AI"],
+      detailId: 'ajar-visual',
+      image: ajarVisualHomeImg,
+      link: "https://ajar-visual.vercel.app/"
+    },
+    {
       title: "Sistem Manajemen Asuransi (Web)",
       description: "Core system manajemen asuransi untuk administrasi polis, klaim, dan Role-Based Access Control (RBAC).",
       technologies: ["Angular", "REST API", "SQL", "TypeScript"],
@@ -115,15 +132,8 @@ export const portfolioData: Profile = {
       technologies: ["Web", "Database"],
       link: "#",
       image: projectSchoolImg
-    },
-    {
-      title: "SyncBoard",
-      description: "Real-time Collaborative Task Board dengan integrasi WebSockets dan database terdistribusi TiDB.",
-      technologies: ["Next.js", "Go", "TiDB", "WebSockets"],
-      detailId: 'sync-board',
-      image: syncBoardImg,
-      link: "https://sync-board-frontend-mu.vercel.app/"
     }
+
 
   ]
 };
