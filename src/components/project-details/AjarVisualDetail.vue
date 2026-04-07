@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowLeft, CheckCircle2, Bot, Image as ImageIcon, Printer, Database, Globe, Server, Cpu, Sparkles } from 'lucide-vue-next';
+import { ArrowLeft, CheckCircle2, Bot, Image as ImageIcon, Printer, Database, Globe, Server, Sparkles } from 'lucide-vue-next';
 import { useNavigation } from '../../composables/useNavigation';
 import { onMounted } from 'vue';
 import ajarVisualDashboardImg from '../../assets/AjarVisual_dashbord.png';
