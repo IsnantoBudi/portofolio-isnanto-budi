@@ -48,7 +48,7 @@ onMounted(() => {
           <div class="flex flex-col items-center gap-4">
             <!-- Icon -->
             <div class="w-14 h-14 rounded-full border border-[var(--color-border)] flex items-center justify-center bg-[var(--color-background)] group-hover:border-[var(--color-accent-primary)]/40 group-hover:bg-[var(--color-accent-primary)]/10 transition-all duration-300 overflow-hidden p-3">
-              <NuxtImg v-if="skill.logo" :src="skill.logo" :alt="skill.name" class="w-full h-full object-contain" loading="lazy" decoding="async" width="40" height="40" />
+              <img v-if="skill.logo" :src="skill.logo" :alt="skill.name" class="w-full h-full object-contain" loading="lazy" decoding="async" width="40" height="40" />
               <span v-else class="text-2xl font-black font-display text-[var(--color-text)]">{{ skill.name.charAt(0) }}</span>
             </div>
 
