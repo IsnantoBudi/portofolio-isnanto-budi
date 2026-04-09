@@ -25,8 +25,6 @@ const { isDark } = useTheme();
                  style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);"
                  loading="lazy"
                  decoding="async"
-                 width="384"
-                 height="384"
                />
                <NuxtImg
                  v-else
@@ -36,8 +34,6 @@ const { isDark } = useTheme();
                  style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);"
                  loading="lazy"
                  decoding="async"
-                 width="384"
-                 height="384"
                />
              </div>
            </div>
