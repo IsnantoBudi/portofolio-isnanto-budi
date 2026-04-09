@@ -1,8 +1,8 @@
-const profileDarkImg = '/foto profil_dark.webp';
-const projectAndroidImg = '/project menejemen android.webp';
-const projectSchoolImg = '/project menejemen sekolah.webp';
-const projectWebImg = '/project menejemen web.webp';
-const tenantMasterHomeImg = '/tenant_master/home tenant master.png';
+const profileDarkImg = '/foto%20profil_dark.webp';
+const projectAndroidImg = '/project%20menejemen%20android.webp';
+const projectSchoolImg = '/project%20menejemen%20sekolah.webp';
+const projectWebImg = '/project%20menejemen%20web.webp';
+const tenantMasterHomeImg = '/tenant_master/home%20tenant%20master.png';
 const syncBoardImg = '/SyncBoard.webp';
 const ajarVisualHomeImg = '/AjarVisual_dashbord.png';
 

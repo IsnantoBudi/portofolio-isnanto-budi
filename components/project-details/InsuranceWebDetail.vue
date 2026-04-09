@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeft, CheckCircle2, Shield, FileText, Activity, Code2, Database } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-const projectWebImg = '/project menejemen web.webp';
+const projectWebImg = '/project%20menejemen%20web.webp';
 
 const { navigateTo } = useNavigation();
 
