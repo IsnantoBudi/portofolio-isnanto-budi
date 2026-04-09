@@ -21,40 +21,48 @@ const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
 
-const handleScroll = () => {
+let observer: IntersectionObserver | null = null;
+let scrollTimeout: ReturnType<typeof setTimeout>;
+
+const handleScrollTheme = () => {
   if (typeof window === 'undefined') return;
-  
   isScrolled.value = window.scrollY > 50;
-
-  // Simple Scroll Spy
-  const sections = navItems.map(item => item.id);
-  let current = '';
-
-  for (const section of sections) {
-    const element = document.getElementById(section);
-    if (element) {
-      const rect = element.getBoundingClientRect();
-      if (rect.top <= 150 && rect.bottom >= 150) {
-        current = section;
-      }
-    }
-  }
   
   if (window.scrollY < 100) {
-      current = '';
+    activeSection.value = '';
   }
-
-  activeSection.value = current;
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-  handleScroll(); 
+  window.addEventListener('scroll', handleScrollTheme, { passive: true });
+  handleScrollTheme(); 
+
+  // Setup IntersectionObserver for Scroll Spy
+  if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+    observer = new IntersectionObserver((entries) => {
+      // Find the first intersecting section 
+      // (Wait for scrolling to settle mostly, or just take the most visible one)
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          activeSection.value = entry.target.id;
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -80% 0px' 
+    });
+
+    // Observe all sections
+    navItems.forEach(item => {
+      const el = document.getElementById(item.id);
+      if (el) observer?.observe(el);
+    });
+  }
 });
 
 onUnmounted(() => {
   if (typeof window !== 'undefined') {
-    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('scroll', handleScrollTheme);
+    if (observer) observer.disconnect();
   }
 });
 

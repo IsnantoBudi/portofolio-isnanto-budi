@@ -30,12 +30,20 @@ let scrollVelocity = 0;
 let lastScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
 let animationFrameId: number;
 
+let cachedWidth = 0;
+
+const updateWidth = () => {
+  const firstContent = Array.isArray(contentRef.value) ? contentRef.value[0] : contentRef.value;
+  cachedWidth = firstContent?.offsetWidth || 0;
+};
+
 const update = () => {
   if (!contentRef.value || !scrollerRef.value) return;
 
   const currentScrollY = window.scrollY;
   const scrollDelta = currentScrollY - lastScrollY;
   
+  // Calculate velocity from scroll
   scrollVelocity += scrollDelta * 0.15;
   scrollVelocity *= 0.85; // Faster decay
   
@@ -48,9 +56,7 @@ const update = () => {
     xPosition.value += totalVelocity;
   }
   
-  // Note: contentRef.value is an array because of v-for with ref in Vue 3
-  const firstContent = Array.isArray(contentRef.value) ? contentRef.value[0] : contentRef.value;
-  const contentWidth = firstContent?.offsetWidth || 0;
+  const contentWidth = cachedWidth;
   
   if (contentWidth > 0) {
     if (direction === 1 && -xPosition.value >= contentWidth) {
@@ -68,12 +74,15 @@ const update = () => {
 
 onMounted(() => {
   lastScrollY = window.scrollY;
+  updateWidth();
+  window.addEventListener('resize', updateWidth, { passive: true });
   window.addEventListener('scroll', () => {}, { passive: true });
   animationFrameId = requestAnimationFrame(update);
 });
 
 onBeforeUnmount(() => {
   if (animationFrameId) cancelAnimationFrame(animationFrameId);
+  window.removeEventListener('resize', updateWidth);
 });
 </script>
 
