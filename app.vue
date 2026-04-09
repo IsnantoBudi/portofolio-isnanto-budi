@@ -2,7 +2,6 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useStructuredData } from '~/composables/useStructuredData';
 
-
 const isMobile = ref(false);
 
 // Global SEO/GEO Structured Data
@@ -11,7 +10,6 @@ useStructuredData();
 const handleResize = () => {
   isMobile.value = window.innerWidth <= 768;
 };
-
 
 onMounted(() => {
   handleResize();
@@ -31,8 +29,6 @@ onUnmounted(() => {
     </ClientOnly>
     
     <NuxtPage />
-    
-    <!-- Speed Insights from Vercel (Auto-injected by Nuxt Vercel Preset usually, but we keep it if explicit) -->
   </div>
 </template>
 

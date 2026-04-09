@@ -17,19 +17,27 @@ const { isDark } = useTheme();
              <div class="absolute bottom-0 left-4 right-4 h-[80%] bg-gradient-to-br from-[var(--color-accent-primary)] via-[var(--color-accent-secondary)] to-[var(--color-accent-primary)] rounded-t-full rounded-b-[3rem] shadow-2xl opacity-90 group-hover:scale-105 transition-transform duration-500"></div>
 
              <div class="relative z-10 flex items-end justify-center h-96">
-               <img 
+               <img
                  v-if="!isDark"
-                 :src="portfolioData.profileImageLight" 
+                 :src="portfolioData.profileImageLight"
                  :alt="portfolioData.name"
                  class="h-full w-auto object-cover drop-shadow-2xl transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2"
-                 style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);" 
+                 style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);"
+                 loading="lazy"
+                 decoding="async"
+                 width="384"
+                 height="384"
                />
-               <img 
+               <img
                  v-else
-                 :src="portfolioData.profileImageDark" 
+                 :src="portfolioData.profileImageDark"
                  :alt="portfolioData.name"
                  class="h-full w-auto object-cover drop-shadow-2xl transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2"
-                 style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);" 
+                 style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);"
+                 loading="lazy"
+                 decoding="async"
+                 width="384"
+                 height="384"
                />
              </div>
            </div>

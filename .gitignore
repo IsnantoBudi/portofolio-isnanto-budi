@@ -1,4 +1,21 @@
-# Logs
+# ── Dependencies ─────────────────────────────────
+node_modules
+.pnp
+.pnp.js
+
+# ── Build outputs ─────────────────────────────────
+.nuxt
+.output
+dist
+dist-ssr
+.vercel
+
+# ── Environment variables ─────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Logs ──────────────────────────────────────────
 logs
 *.log
 npm-debug.log*
@@ -7,26 +24,53 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-.nuxt
-.output
-.vercel
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# ── Editor & IDE ──────────────────────────────────
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 
-# Environment variables
-.env
-.env.*
-!.env.example
+# ── OS files ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Python / Test environments ────────────────────
+.venv
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# ── Test & QA files ───────────────────────────────
+test_webapp.py
+*.test.*
+*.spec.*
+
+# ── SEO audit & test reports ──────────────────────
+SEO-REPORT*.html
+homepage.html
+homepage-new.html
+parse_results.json
+readability_results.json
+schema_results.json
+screenshots/
+
+# ── Verification & snapshot images ────────────────
+verify_*.png
+verify_*.jpg
+verify_*.webp
+
+# ── Temporary / one-off files ─────────────────────
+npx
+logo.svg
+
+# ── Google Search Console verification ───────────
+# Keep google*.html tracked (needed for domain verification on Vercel)
+# google7fbe6ee0fafb1cf8.html  ← intentionally NOT ignored
+
+# ── Agent workspace ───────────────────────────────
+.agent/

@@ -3,10 +3,11 @@ import { portfolioData } from '~/data/portfolio';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-vue-next';
 import { ref, onMounted, onUnmounted } from 'vue';
 
-// Mouse-tracking radial spotlight
+// Mouse-tracking radial spotlight (desktop only — skip on touch/mobile)
 const spotX = ref(50);
 const spotY = ref(50);
 const heroRef = ref<HTMLElement | null>(null);
+const isDesktop = ref(false);
 
 const handleMouseMove = (e: MouseEvent) => {
   if (!heroRef.value) return;
@@ -17,11 +18,16 @@ const handleMouseMove = (e: MouseEvent) => {
 
 onMounted(() => {
   if (typeof window !== 'undefined') {
-    heroRef.value?.addEventListener('mousemove', handleMouseMove);
+    // Only enable mouse spotlight on non-touch devices (desktop)
+    isDesktop.value = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (isDesktop.value) {
+      heroRef.value?.addEventListener('mousemove', handleMouseMove, { passive: true });
+    }
   }
 });
+
 onUnmounted(() => {
-  if (typeof window !== 'undefined') {
+  if (typeof window !== 'undefined' && isDesktop.value) {
     heroRef.value?.removeEventListener('mousemove', handleMouseMove);
   }
 });
@@ -36,19 +42,26 @@ onUnmounted(() => {
     <!-- Geometric dot-grid background -->
     <div class="absolute inset-0 -z-20 dot-grid text-[var(--color-border)] opacity-60"></div>
 
-    <!-- Mouse-tracking radial spotlight -->
+    <!-- Mouse-tracking radial spotlight (desktop only) -->
     <div
+      v-if="isDesktop"
       class="absolute inset-0 -z-10 transition-[background] duration-300 ease-out pointer-events-none"
       :style="{
         background: `radial-gradient(600px circle at ${spotX}% ${spotY}%, var(--spotlight-color), transparent 70%)`
       }"
     ></div>
+    <!-- Static spotlight fallback for mobile -->
+    <div
+      v-else
+      class="absolute inset-0 -z-10 pointer-events-none"
+      style="background: radial-gradient(60% 40% at 50% 30%, var(--spotlight-color), transparent 70%)"
+    ></div>
 
-    <!-- Static ambient glows (subtle, not blob) -->
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] -z-10 pointer-events-none">
+    <!-- Static ambient glows — hidden on mobile to save GPU -->
+    <div class="hidden md:block absolute top-0 right-0 w-[500px] h-[500px] -z-10 pointer-events-none">
       <div class="absolute inset-0 bg-gradient-radial from-[var(--color-accent-secondary)]/10 to-transparent rounded-full blur-3xl"></div>
     </div>
-    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] -z-10 pointer-events-none">
+    <div class="hidden md:block absolute bottom-0 left-0 w-[400px] h-[400px] -z-10 pointer-events-none">
       <div class="absolute inset-0 bg-gradient-radial from-[var(--color-accent-primary)]/8 to-transparent rounded-full blur-3xl"></div>
     </div>
 
@@ -67,7 +80,7 @@ onUnmounted(() => {
           style="letter-spacing: -0.03em;"
         >
           <span class="block text-[var(--color-text)]">{{ portfolioData.name.split(' ')[0] }}</span>
-          <span class="block bg-gradient-to-r from-[var(--color-accent-primary)] via-[var(--color-accent-secondary)] to-[var(--color-accent-primary)] bg-[length:200%_auto] bg-clip-text shimmer-btn">
+          <span class="block bg-gradient-to-r from-[var(--color-accent-primary)] via-[var(--color-accent-secondary)] to-[var(--color-accent-primary)] bg-[length:200%_auto] bg-clip-text shimmer-text">
             {{ portfolioData.name.split(' ').slice(1).join(' ') }}
           </span>
         </h1>
@@ -90,8 +103,8 @@ onUnmounted(() => {
             href="#projects"
             class="group relative overflow-hidden inline-flex items-center gap-2 px-8 py-3.5 bg-[var(--color-accent-primary)] text-white font-semibold rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-[var(--color-accent-primary)]/40 hover:-translate-y-0.5"
           >
-            <!-- Shimmer -->
-            <span class="absolute inset-0 shimmer-btn opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <!-- Shimmer (hover-only via CSS, no continuous JS animation) -->
+            <span class="absolute inset-0 shimmer-hover opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             <span class="relative">Lihat Karya</span>
             <ArrowRight class="relative w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
           </a>
@@ -108,6 +121,7 @@ onUnmounted(() => {
           <a
             :href="portfolioData.socials.linkedin"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="Profil LinkedIn"
             class="group p-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 backdrop-blur-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent-primary)] hover:border-[var(--color-accent-primary)]/40 hover:bg-[var(--color-accent-primary)]/10 transition-all duration-300 hover:-translate-y-1"
           >
@@ -117,6 +131,7 @@ onUnmounted(() => {
             v-if="portfolioData.socials.github"
             :href="portfolioData.socials.github"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="Profil GitHub"
             class="group p-2.5 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)]/50 backdrop-blur-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent-primary)] hover:border-[var(--color-accent-primary)]/40 hover:bg-[var(--color-accent-primary)]/10 transition-all duration-300 hover:-translate-y-1"
           >

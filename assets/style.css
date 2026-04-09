@@ -15,39 +15,25 @@
   /* ── Animations ──────────────────────────── */
   --animate-float: float 6s ease-in-out infinite;
   --animate-shimmer: shimmer 2.5s linear infinite;
-  --animate-fade-in-up: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-in-up: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-grid-in: gridReveal 1.2s ease-out forwards;
 
   @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-
-    50% {
-      transform: translateY(-18px);
-    }
-
-    100% {
-      transform: translateY(0px);
-    }
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0px); }
   }
 
   @keyframes shimmer {
-    0% {
-      background-position: -200% center;
-    }
-
-    100% {
-      background-position: 200% center;
-    }
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
   }
 
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(24px);
+      transform: translateY(20px);
     }
-
     to {
       opacity: 1;
       transform: translateY(0);
@@ -55,25 +41,13 @@
   }
 
   @keyframes gridReveal {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 
   @keyframes spotlightPulse {
-
-    0%,
-    100% {
-      opacity: 0.6;
-    }
-
-    50% {
-      opacity: 1;
-    }
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
   }
 }
 
@@ -110,12 +84,41 @@
   background-size: 28px 28px;
 }
 
-/* Shimmer button effect */
+/* ── Shimmer Effects ─────────────────────────── */
+
+/* Continuous shimmer for gradient text (name in hero) */
+.shimmer-text {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 60%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Hover-only shimmer for buttons — no continuous animation cost */
+.shimmer-hover {
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 60%
+  );
+  background-size: 200% auto;
+  background-position: -200% center;
+  transition: background-position 0.5s ease;
+}
+
+/* Legacy alias kept for backward compat */
 .shimmer-btn {
-  background: linear-gradient(105deg,
-      transparent 40%,
-      rgba(255, 255, 255, 0.25) 50%,
-      transparent 60%);
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 60%
+  );
   background-size: 200% auto;
   animation: shimmer 2.5s linear infinite;
 }
@@ -126,7 +129,8 @@
   line-height: 1.6;
   font-weight: 400;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  /* optimizeLegibility on desktop only — too expensive on mobile GPU */
+  text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -138,31 +142,31 @@
   --color-text-muted: #4b5563;
   --color-border: rgba(15, 23, 42, 0.1);
 
-  --color-accent-primary: #0369a1;
-  /* Sky 700 — confident, deep blue */
-  --color-accent-secondary: #6d28d9;
-  /* Violet 700 — electric accent */
+  --color-accent-primary: #0369a1;   /* Sky 700 — confident, deep blue */
+  --color-accent-secondary: #6d28d9; /* Violet 700 — electric accent */
 
   /* Spotlight accent for hero (light mode) */
   --spotlight-color: rgba(3, 105, 161, 0.1);
 }
 
+/* Switch to optimizeLegibility only on actual desktop screens */
+@media (min-width: 1024px) {
+  :root {
+    text-rendering: optimizeLegibility;
+  }
+}
+
 :root.dark {
   /* Dark Theme */
-  --color-background: #08101e;
-  /* Deep navy — richer than slate-950 */
-  --color-surface: #0f1c2e;
-  /* Slightly lifted surface */
+  --color-background: #08101e;       /* Deep navy — richer than slate-950 */
+  --color-surface: #0f1c2e;          /* Slightly lifted surface */
   --color-surface-trans: rgba(15, 28, 46, 0.88);
-  --color-text: #e2e8f0;
-  /* Slight warm tone */
+  --color-text: #e2e8f0;             /* Slight warm tone */
   --color-text-muted: #94a3b8;
   --color-border: rgba(148, 163, 184, 0.12);
 
-  --color-accent-primary: #38bdf8;
-  /* Sky 400 — vivid on dark */
-  --color-accent-secondary: #a78bfa;
-  /* Violet 400 — soft neon */
+  --color-accent-primary: #38bdf8;   /* Sky 400 — vivid on dark */
+  --color-accent-secondary: #a78bfa; /* Violet 400 — soft neon */
 
   /* Spotlight accent for hero (dark mode) */
   --spotlight-color: rgba(56, 189, 248, 0.08);
@@ -180,9 +184,7 @@ body {
 }
 
 /* ── Custom Scrollbar ────────────────────────── */
-::-webkit-scrollbar {
-  width: 7px;
-}
+::-webkit-scrollbar { width: 7px; }
 
 ::-webkit-scrollbar-track {
   background: var(--color-background);
@@ -200,38 +202,54 @@ body {
 
 /* ── Animation Helpers ───────────────────────── */
 .animate-fade-in-up {
-  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
   opacity: 0;
 }
 
-.animation-delay-100 {
-  animation-delay: 0.10s;
+/* Shorter stagger delays for faster perceived load on mobile */
+.animation-delay-100 { animation-delay: 0.08s; }
+.animation-delay-200 { animation-delay: 0.16s; }
+.animation-delay-300 { animation-delay: 0.24s; }
+.animation-delay-400 { animation-delay: 0.34s; }
+.animation-delay-500 { animation-delay: 0.44s; }
+.animation-delay-600 { animation-delay: 0.56s; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* ── Respect user preference for reduced motion ──── */
+/* Stops ALL continuous animations for accessibility and mobile battery */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .shimmer-text,
+  .shimmer-btn {
+    animation: none !important;
+  }
 }
 
-.animation-delay-200 {
-  animation-delay: 0.20s;
-}
+/* ── Mobile-specific overrides ───────────────── */
+@media (max-width: 768px) {
+  /* Stop expensive continuous shimmer on gradient text for mobile */
+  .shimmer-text {
+    animation: none;
+    /* Keep gradient without animation — still looks great */
+    background-position: 0% center;
+  }
 
-.animation-delay-300 {
-  animation-delay: 0.30s;
-}
+  /* Disable dot-grid on mobile (CPU paint cost) */
+  .dot-grid {
+    display: none;
+  }
 
-.animation-delay-400 {
-  animation-delay: 0.42s;
-}
-
-.animation-delay-500 {
-  animation-delay: 0.56s;
-}
-
-.animation-delay-600 {
-  animation-delay: 0.72s;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
+  /* Reduce backdrop-blur intensity on mobile (GPU-intensive) */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
 }

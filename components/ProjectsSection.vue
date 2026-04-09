@@ -54,6 +54,10 @@ const closeLightbox = () => {
               :src="project.image" 
               :alt="project.title"
               class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+              :loading="index === 0 ? 'eager' : 'lazy'"
+              decoding="async"
+              width="400"
+              height="224"
             />
             <div v-else class="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
               <span class="text-gray-500 font-medium">Tidak Ada Gambar</span>

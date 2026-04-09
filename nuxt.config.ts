@@ -32,16 +32,23 @@ export default defineNuxtConfig({
         { name: 'geo.region', content: 'ID-JK' },
         { name: 'geo.placename', content: 'Jakarta' },
         { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://www.isnantobudi.online' },
         { property: 'og:title', content: 'Isnanto Budi Nurrahman — Portfolio' },
         { property: 'og:description', content: 'Explore the portfolio of Isnanto Budi Nurrahman, showcasing expertise in Full-Stack and Mobile development.' },
-        { property: 'og:image', content: '/ib-logo.svg' },
+        { property: 'og:image', content: 'https://www.isnantobudi.online/ib-logo.svg' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:site', content: '@isnantobudi' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/ib-logo.svg' },
+        // DNS prefetch for external resource CDNs
+        { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
+        { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
+        { rel: 'dns-prefetch', href: 'https://cdn.jsdelivr.net' },
+        // Preconnect for fonts (critical path)
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        // Google Fonts with font-display=swap to prevent render-blocking
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap' }
       ]
     }
