@@ -21,7 +21,7 @@ const { isDark } = useTheme();
                  v-if="!isDark"
                  :src="portfolioData.profileImageLight"
                  :alt="portfolioData.name"
-                 class="h-full w-auto object-cover drop-shadow-2xl transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2"
+                 class="h-full w-auto object-cover rounded-t-full rounded-b-[3rem] drop-shadow-2xl transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2"
                  style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);"
                  loading="lazy"
                  decoding="async"
@@ -30,7 +30,7 @@ const { isDark } = useTheme();
                  v-else
                  :src="portfolioData.profileImageDark"
                  :alt="portfolioData.name"
-                 class="h-full w-auto object-cover drop-shadow-2xl transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2"
+                 class="h-full w-auto object-cover rounded-t-full rounded-b-[3rem] drop-shadow-2xl transform transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2"
                  style="mask-image: linear-gradient(to bottom, black 90%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);"
                  loading="lazy"
                  decoding="async"
