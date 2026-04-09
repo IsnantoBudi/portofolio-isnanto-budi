@@ -1,15 +1,15 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, watch } from 'vue';
-import * as THREE from 'three';
 import { useTheme } from '~/composables/useTheme';
 
 const { isDark } = useTheme();
 
 const containerRef = ref<HTMLElement | null>(null);
-let scene: THREE.Scene;
-let camera: THREE.PerspectiveCamera;
-let renderer: THREE.WebGLRenderer;
-let particlesMesh: THREE.Points;
+// We use 'any' type here because we dynamically import THREE
+let scene: any;
+let camera: any;
+let renderer: any;
+let particlesMesh: any;
 let animationId: number;
 
 // Mouse interaction
@@ -28,11 +28,17 @@ const onDocumentMouseMove = (event: MouseEvent) => {
 
 // Particle config
 const PARTICLE_COUNT = 2000;
-let particlesGeometry: THREE.BufferGeometry;
-let particlesMaterial: THREE.PointsMaterial;
+let particlesGeometry: any;
+let particlesMaterial: any;
 
-const init = () => {
+let THREE: any;
+
+const init = async () => {
   if (!containerRef.value) return;
+
+  // Dynamically import three.js ONLY when init is called (desktop only)
+  // This completely removes three.js from the mobile JS payload and evaluation
+  THREE = await import('three');
 
   windowHalfX = window.innerWidth / 2;
   windowHalfY = window.innerHeight / 2;
@@ -86,7 +92,7 @@ const init = () => {
 };
 
 const updateThemeColors = () => {
-  if (!particlesMaterial) return;
+  if (!particlesMaterial || !THREE) return;
   
   if (isDark.value) {
     particlesMaterial.color.setHex(0x34d399); 
@@ -102,9 +108,11 @@ const updateThemeColors = () => {
 const onWindowResize = () => {
   windowHalfX = window.innerWidth / 2;
   windowHalfY = window.innerHeight / 2;
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  if (camera && renderer) {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  }
 };
 
 const animate = () => {
@@ -113,11 +121,13 @@ const animate = () => {
   targetX = mouseX * 0.001;
   targetY = mouseY * 0.001;
 
-  particlesMesh.rotation.y += 0.05 * (targetX - particlesMesh.rotation.y);
-  particlesMesh.rotation.x += 0.05 * (targetY - particlesMesh.rotation.x);
-  particlesMesh.rotation.z += 0.001;
+  if (particlesMesh && renderer && scene && camera) {
+    particlesMesh.rotation.y += 0.05 * (targetX - particlesMesh.rotation.y);
+    particlesMesh.rotation.x += 0.05 * (targetY - particlesMesh.rotation.x);
+    particlesMesh.rotation.z += 0.001;
 
-  renderer.render(scene, camera);
+    renderer.render(scene, camera);
+  }
 };
 
 watch(isDark, () => {

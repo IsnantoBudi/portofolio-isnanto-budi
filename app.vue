@@ -23,9 +23,9 @@ onUnmounted(() => {
 
 <template>
   <div class="min-h-screen text-[var(--color-text)] selection:bg-primary selection:text-white transition-colors duration-500 bg-[var(--color-bg)]">
-    <!-- ThreeJS only on Desktop and Client-side -->
+    <!-- ThreeJS only on Desktop, Client-side, and Lazy-loaded -->
     <ClientOnly>
-      <ThreeBackground v-if="!isMobile" />
+      <LazyThreeBackground v-if="!isMobile" />
     </ClientOnly>
     
     <NuxtPage />
