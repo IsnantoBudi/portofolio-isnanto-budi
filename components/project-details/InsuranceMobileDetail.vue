@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeft, CheckCircle2, Smartphone, FileCheck, Send, Bell, Activity } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-const projectAndroidImg = '/assets/project menejemen android.webp';
+const projectAndroidImg = '/project menejemen android.webp';
 
 const { navigateTo } = useNavigation();
 

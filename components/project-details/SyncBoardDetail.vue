@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeft, CheckCircle2, Zap, Server, Database, Globe, Users, LayoutDashboard } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-const syncBoardImg = '/assets/SyncBoard.webp';
+const syncBoardImg = '/SyncBoard.webp';
 
 const { navigateTo } = useNavigation();
 

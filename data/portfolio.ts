@@ -1,10 +1,10 @@
-const profileDarkImg = '/assets/foto profil_dark.webp';
-const projectAndroidImg = '/assets/project menejemen android.webp';
-const projectSchoolImg = '/assets/project menejemen sekolah.webp';
-const projectWebImg = '/assets/project menejemen web.webp';
-const tenantMasterHomeImg = '/assets/tenant_master/home tenant master.png';
-const syncBoardImg = '/assets/SyncBoard.webp';
-const ajarVisualHomeImg = '/assets/AjarVisual_dashbord.png';
+const profileDarkImg = '/foto profil_dark.webp';
+const projectAndroidImg = '/project menejemen android.webp';
+const projectSchoolImg = '/project menejemen sekolah.webp';
+const projectWebImg = '/project menejemen web.webp';
+const tenantMasterHomeImg = '/tenant_master/home tenant master.png';
+const syncBoardImg = '/SyncBoard.webp';
+const ajarVisualHomeImg = '/AjarVisual_dashbord.png';
 
 export interface Experience {
   company: string;

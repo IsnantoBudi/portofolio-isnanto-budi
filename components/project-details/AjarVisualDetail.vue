@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ArrowLeft, CheckCircle2, Bot, Image as ImageIcon, Printer, Database, Globe, Server, Sparkles } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-const ajarVisualDashboardImg = '/assets/AjarVisual_dashbord.png';
-const ajarVisualSoalImg = '/assets/AjarVisual_soal.png';
+const ajarVisualDashboardImg = '/AjarVisual_dashbord.png';
+const ajarVisualSoalImg = '/AjarVisual_soal.png';
 
 const { navigateTo } = useNavigation();
 
