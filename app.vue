@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
+import { useStructuredData } from '~/composables/useStructuredData';
+
 
 const isMobile = ref(false);
+
+// Global SEO/GEO Structured Data
+useStructuredData();
 
 const handleResize = () => {
   isMobile.value = window.innerWidth <= 768;
 };
+
 
 onMounted(() => {
   handleResize();

@@ -21,18 +21,22 @@ export default defineNuxtConfig({
     head: {
       title: 'Isnanto Budi Nurrahman — Full-Stack & Mobile Developer',
       htmlAttrs: {
-        lang: 'en'
+        lang: 'id'
       },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Portal portofolio Isnanto Budi Nurrahman — Full-Stack & Mobile Developer berpengalaman dalam arsitektur SaaS, solusi asuransi, dan aplikasi mobile modern menggunakan Vue.js dan TypeScript.' },
-        { name: 'keywords', content: 'Isnanto Budi Nurrahman, Isnanto Budi, isnanto budi portofolio, Software Engineer Indonesia, Full-Stack Developer, Mobile Developer, Web Developer Vue.js, Developer Jakarta, SaaS Architecture, TypeScript Developer, Nuxt.js' },
+        { name: 'description', content: 'Portfolio Isnanto Budi Nurrahman — Full-Stack Developer berpengalaman dalam Angular, Flutter, Go, dan arsitektur SaaS.' },
+        { name: 'keywords', content: 'Isnanto Budi Nurrahman, Software Engineer Jakarta, Full-Stack Developer Indonesia, Vue.js Developer, Flutter Developer Jakarta, SaaS Architecture' },
         { name: 'author', content: 'Isnanto Budi Nurrahman' },
+        { name: 'geo.region', content: 'ID-JK' },
+        { name: 'geo.placename', content: 'Jakarta' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'Isnanto Budi Nurrahman — Full-Stack & Mobile Developer' },
-        { property: 'og:description', content: 'Portal portofolio Isnanto Budi Nurrahman. Spesialis arsitektur SaaS dan aplikasi mobile modern dengan Vue.js & TypeScript.' },
-        { name: 'twitter:card', content: 'summary_large_image' }
+        { property: 'og:title', content: 'Isnanto Budi Nurrahman — Portfolio' },
+        { property: 'og:description', content: 'Explore the portfolio of Isnanto Budi Nurrahman, showcasing expertise in Full-Stack and Mobile development.' },
+        { property: 'og:image', content: '/ib-logo.svg' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@isnantobudi' },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/ib-logo.svg' },
