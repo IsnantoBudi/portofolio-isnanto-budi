@@ -95,7 +95,7 @@
     transparent 60%
   );
   background-size: 200% auto;
-  animation: shimmer 3s linear infinite;
+  background-position: 0% center;
 }
 
 /* Hover-only shimmer for buttons — no continuous animation cost */
@@ -120,7 +120,7 @@
     transparent 60%
   );
   background-size: 200% auto;
-  animation: shimmer 2.5s linear infinite;
+  background-position: 0% center;
 }
 
 /* ── Root Design Tokens ────────────────────── */

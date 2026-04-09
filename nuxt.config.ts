@@ -17,6 +17,25 @@ export default defineNuxtConfig({
     preset: 'vercel'
   },
 
+  modules: [
+    '@nuxtjs/google-fonts'
+  ],
+
+  googleFonts: {
+    families: {
+      Outfit: [300, 400, 500, 600, 700, 800, 900],
+      'Plus Jakarta Sans': {
+        wght: [300, 400, 500, 600, 700, 800],
+        ital: [400]
+      }
+    },
+    display: 'swap',
+    prefetch: true,
+    preconnect: true,
+    preload: true,
+    download: true, // Download font files to serve locally (best for LCP)
+  },
+
   app: {
     head: {
       title: 'Isnanto Budi Nurrahman — Full-Stack & Mobile Developer',
@@ -40,16 +59,7 @@ export default defineNuxtConfig({
         { name: 'twitter:site', content: '@isnantobudi' },
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/ib-logo.svg' },
-        // DNS prefetch for external resource CDNs
-        { rel: 'dns-prefetch', href: 'https://fonts.googleapis.com' },
-        { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
-        { rel: 'dns-prefetch', href: 'https://cdn.jsdelivr.net' },
-        // Preconnect for fonts (critical path)
-        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
-        // Google Fonts with font-display=swap to prevent render-blocking
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap' }
+        { rel: 'icon', type: 'image/svg+xml', href: '/ib-logo.svg' }
       ]
     }
   }
