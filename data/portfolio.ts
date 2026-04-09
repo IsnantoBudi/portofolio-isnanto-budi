@@ -52,7 +52,7 @@ export const portfolioData: Profile = {
   profileImageDark: profileDarkImg,
   profileImageLight: profileDarkImg,
   about: [
-    "Full-Stack Developer dengan pengalaman profesional lebih dari 2 tahun dalam pengembangan aplikasi web dan mobile.",
+    "Full-Stack Developer dengan pengalaman profesional lebih dari 3 tahun dalam pengembangan aplikasi web dan mobile.",
     "Berpengalaman menggunakan Angular dan Flutter untuk membangun sistem berbasis REST API dengan fokus pada maintainability dan kebutuhan bisnis.",
     "Terbiasa bekerja dalam tim dan menangani pengembangan fitur end-to-end."
   ],

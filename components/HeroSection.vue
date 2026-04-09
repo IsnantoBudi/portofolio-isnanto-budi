@@ -67,7 +67,7 @@ onUnmounted(() => {
           style="letter-spacing: -0.03em;"
         >
           <span class="block text-[var(--color-text)]">{{ portfolioData.name.split(' ')[0] }}</span>
-          <span class="block bg-gradient-to-r from-[var(--color-accent-primary)] via-[var(--color-accent-secondary)] to-[var(--color-accent-primary)] bg-[length:200%_auto] bg-clip-text shimmer-btn text-transparent">
+          <span class="block bg-gradient-to-r from-[var(--color-accent-primary)] via-[var(--color-accent-secondary)] to-[var(--color-accent-primary)] bg-[length:200%_auto] bg-clip-text shimmer-btn">
             {{ portfolioData.name.split(' ').slice(1).join(' ') }}
           </span>
         </h1>
