@@ -49,7 +49,7 @@ const closeLightbox = () => {
               </div>
             </div>
 
-            <img 
+            <NuxtImg 
               v-if="project.image" 
               :src="project.image" 
               :alt="project.title"
@@ -117,7 +117,7 @@ const closeLightbox = () => {
               leave-to-class="opacity-0 scale-95"
             >
               <div class="relative z-10 w-auto h-auto max-w-[95vw] max-h-[90vh] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 transform-gpu flex items-center justify-center">
-                  <img 
+                  <NuxtImg 
                     :src="selectedImage" 
                     class="block w-auto h-auto max-w-full max-h-[90vh] object-contain bg-black/5" 
                     @click.stop 

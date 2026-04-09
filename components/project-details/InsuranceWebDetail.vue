@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeft, CheckCircle2, Shield, FileText, Activity, Code2, Database } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-import projectWebImg from '~/assets/project menejemen web.webp';
+const projectWebImg = '/assets/project menejemen web.webp';
 
 const { navigateTo } = useNavigation();
 
@@ -88,7 +88,7 @@ const techStack = [
           </div>
           <div class="w-full lg:w-1/2">
              <div class="w-full aspect-video bg-[var(--color-surface-trans)] backdrop-blur-md rounded-2xl border border-[var(--color-border)] shadow-2xl flex items-center justify-center p-2 overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500 group">
-                <img :src="projectWebImg" alt="Insurance Web Dashboard Preview" class="w-full h-full object-cover object-top rounded-xl shadow-lg group-hover:scale-[1.03] transition-transform duration-700 opacity-90 hover:opacity-100" />
+                <NuxtImg :src="projectWebImg" alt="Insurance Web Dashboard Preview" class="w-full h-full object-cover object-top rounded-xl shadow-lg group-hover:scale-[1.03] transition-transform duration-700 opacity-90 hover:opacity-100" />
              </div>
           </div>
         </div>

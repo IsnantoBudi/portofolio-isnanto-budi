@@ -17,7 +17,7 @@ const { isDark } = useTheme();
              <div class="absolute bottom-0 left-4 right-4 h-[80%] bg-gradient-to-br from-[var(--color-accent-primary)] via-[var(--color-accent-secondary)] to-[var(--color-accent-primary)] rounded-t-full rounded-b-[3rem] shadow-2xl opacity-90 group-hover:scale-105 transition-transform duration-500"></div>
 
              <div class="relative z-10 flex items-end justify-center h-96">
-               <img
+               <NuxtImg
                  v-if="!isDark"
                  :src="portfolioData.profileImageLight"
                  :alt="portfolioData.name"
@@ -28,7 +28,7 @@ const { isDark } = useTheme();
                  width="384"
                  height="384"
                />
-               <img
+               <NuxtImg
                  v-else
                  :src="portfolioData.profileImageDark"
                  :alt="portfolioData.name"

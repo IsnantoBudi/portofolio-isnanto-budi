@@ -1,11 +1,10 @@
-import profileDarkImg from '../assets/foto profil_dark.webp';
-// import profileLightImg from '../assets/foto profil_light.webp';
-import projectAndroidImg from '../assets/project menejemen android.webp';
-import projectSchoolImg from '../assets/project menejemen sekolah.webp';
-import projectWebImg from '../assets/project menejemen web.webp';
-import tenantMasterHomeImg from '../assets/tenant_master/home tenant master.png';
-import syncBoardImg from '../assets/SyncBoard.webp';
-import ajarVisualHomeImg from '../assets/AjarVisual_dashbord.png';
+const profileDarkImg = '/assets/foto profil_dark.webp';
+const projectAndroidImg = '/assets/project menejemen android.webp';
+const projectSchoolImg = '/assets/project menejemen sekolah.webp';
+const projectWebImg = '/assets/project menejemen web.webp';
+const tenantMasterHomeImg = '/assets/tenant_master/home tenant master.png';
+const syncBoardImg = '/assets/SyncBoard.webp';
+const ajarVisualHomeImg = '/assets/AjarVisual_dashbord.png';
 
 export interface Experience {
   company: string;

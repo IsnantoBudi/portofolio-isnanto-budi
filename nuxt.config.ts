@@ -18,8 +18,16 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    '@nuxt/image'
   ],
+
+  image: {
+    provider: 'imagekit',
+    imagekit: {
+      baseURL: 'https://ik.imagekit.io/vc2olalw4/'
+    }
+  },
 
   googleFonts: {
     families: {

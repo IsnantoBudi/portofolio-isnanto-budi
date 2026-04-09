@@ -19,6 +19,7 @@
     "three": "^0.182.0"
   },
   "devDependencies": {
+    "@nuxt/image": "^2.0.0",
     "@nuxtjs/google-fonts": "^3.2.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tailwindcss/postcss": "^4.1.18",

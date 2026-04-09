@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeft, CheckCircle2, Smartphone, FileCheck, Send, Bell, Activity } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-import projectAndroidImg from '~/assets/project menejemen android.webp';
+const projectAndroidImg = '/assets/project menejemen android.webp';
 
 const { navigateTo } = useNavigation();
 
@@ -73,7 +73,7 @@ const techStack = [
           
           <div class="w-full lg:w-1/2 flex justify-center">
              <div class="relative aspect-[9/16] w-full max-w-xs bg-[var(--color-surface-trans)] backdrop-blur-md rounded-[2.5rem] border-[8px] border-[var(--color-surface)] shadow-2xl flex items-center justify-center overflow-hidden mix-blend-normal">
-                <img :src="projectAndroidImg" alt="Insurance Mobile Dashboard Preview" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 p-4" />
+                <NuxtImg :src="projectAndroidImg" alt="Insurance Mobile Dashboard Preview" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700 p-4" />
              </div>
           </div>
 

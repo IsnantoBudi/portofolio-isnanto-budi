@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ArrowLeft, CheckCircle2, Bot, Image as ImageIcon, Printer, Database, Globe, Server, Sparkles } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-import ajarVisualDashboardImg from '~/assets/AjarVisual_dashbord.png';
-import ajarVisualSoalImg from '~/assets/AjarVisual_soal.png';
+const ajarVisualDashboardImg = '/assets/AjarVisual_dashbord.png';
+const ajarVisualSoalImg = '/assets/AjarVisual_soal.png';
 
 const { navigateTo } = useNavigation();
 
@@ -105,7 +105,7 @@ const techStack = [
           </div>
           <div class="w-full lg:w-1/2">
              <div class="w-full bg-[var(--color-surface-trans)] backdrop-blur-md rounded-2xl border border-[var(--color-border)] shadow-2xl flex items-center justify-center overflow-hidden transform relative group hover:scale-[1.02] transition-transform duration-500">
-                <img :src="ajarVisualDashboardImg" alt="AjarVisual Dashboard Overview" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+                <NuxtImg :src="ajarVisualDashboardImg" alt="AjarVisual Dashboard Overview" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
              </div>
           </div>
         </div>
@@ -116,7 +116,7 @@ const techStack = [
         <div class="absolute inset-0 bg-grid-pattern text-[var(--color-border)] opacity-10 rounded-3xl"></div>
         <div class="w-full lg:w-1/2 relative z-10">
             <div class="w-full bg-[var(--color-surface-trans)] backdrop-blur-md rounded-2xl border border-[var(--color-border)] shadow-2xl flex items-center justify-center overflow-hidden transform relative group hover:scale-[1.02] transition-transform duration-500">
-              <img :src="ajarVisualSoalImg" alt="AjarVisual Worksheet View" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
+              <NuxtImg :src="ajarVisualSoalImg" alt="AjarVisual Worksheet View" class="w-full h-auto object-cover opacity-90 group-hover:opacity-100 transition-opacity" />
             </div>
         </div>
         <div class="w-full lg:w-1/2 space-y-6 relative z-10">

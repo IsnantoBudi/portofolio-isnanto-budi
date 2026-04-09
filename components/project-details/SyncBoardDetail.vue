@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ArrowLeft, CheckCircle2, Zap, Server, Database, Globe, Users, LayoutDashboard } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-import syncBoardImg from '~/assets/SyncBoard.webp';
+const syncBoardImg = '/assets/SyncBoard.webp';
 
 const { navigateTo } = useNavigation();
 
@@ -102,7 +102,7 @@ const techStack = [
           </div>
           <div class="w-full lg:w-1/2">
              <div class="w-full aspect-video bg-[var(--color-surface-trans)] backdrop-blur-md rounded-2xl border border-[var(--color-border)] shadow-2xl flex items-center justify-center p-2 overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500 group">
-                <img :src="syncBoardImg" alt="SyncBoard Dashboard Preview" class="w-full h-full object-cover object-top rounded-xl shadow-lg group-hover:scale-[1.03] transition-transform duration-700 opacity-90 hover:opacity-100" />
+                <NuxtImg :src="syncBoardImg" alt="SyncBoard Dashboard Preview" class="w-full h-full object-cover object-top rounded-xl shadow-lg group-hover:scale-[1.03] transition-transform duration-700 opacity-90 hover:opacity-100" />
              </div>
           </div>
         </div>

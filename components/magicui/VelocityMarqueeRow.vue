@@ -96,7 +96,7 @@ onBeforeUnmount(() => {
         ref="contentRef"
         class="flex items-center shrink-0"
       >
-        <img
+        <NuxtImg
           v-for="(src, idx) in items"
           :key="idx"
           :src="src"
@@ -140,7 +140,7 @@ onBeforeUnmount(() => {
           leave-to-class="opacity-0 scale-95"
         >
           <div class="relative z-[105] w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 transform-gpu flex items-center justify-center" @click.stop>
-              <img 
+              <NuxtImg 
                 :src="selectedImage" 
                 class="w-auto max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl" 
               />

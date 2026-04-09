@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ArrowLeft, CheckCircle2, Server, Database, Code2, LayoutDashboard, Layers, ShieldCheck } from 'lucide-vue-next';
 import { onMounted } from 'vue';
-import tenantMasterHomeImg from '~/assets/tenant_master/home tenant master.png';
-import demoImg from '~/assets/tenant_master/demo tenant master.png';
-import userAplikasiImg from '~/assets/tenant_master/tenant master managemen user and aplikasi.png';
-import adminDashboardImg from '~/assets/tenant_master/admin dashboard.png';
-import adminPanelImg from '~/assets/tenant_master/admin panel managemen.png';
+const tenantMasterHomeImg = '/assets/tenant_master/home tenant master.png';
+const demoImg = '/assets/tenant_master/demo tenant master.png';
+const userAplikasiImg = '/assets/tenant_master/tenant master managemen user and aplikasi.png';
+const adminDashboardImg = '/assets/tenant_master/admin dashboard.png';
+const adminPanelImg = '/assets/tenant_master/admin panel managemen.png';
 
 const imagesRowA = [demoImg, tenantMasterHomeImg, userAplikasiImg];
 const imagesRowB = [adminDashboardImg, adminPanelImg];
