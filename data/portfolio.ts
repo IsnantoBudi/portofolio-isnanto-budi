@@ -75,17 +75,17 @@ export const portfolioData: Profile = {
     }
   ],
   skills: [
-    { name: "Angular", level: 90, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
-    { name: "Flutter", level: 90, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
-    { name: "JavaScript/TypeScript", level: 85, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-    { name: "Dart", level: 85, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" },
-    { name: "HTML/CSS", level: 90, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-    { name: "Go", level: 75, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
-    { name: "REST API", level: 85, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" }, // Using Postman as proxy for API dev
-    { name: "SQL", level: 80, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-    { name: "Git", level: 85, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-    { name: "Vue.js", level: 70, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
-    { name: "React", level: 70, logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Angular", level: 90, logo: "https://cdn.simpleicons.org/angular/DD0031" },
+    { name: "Flutter", level: 90, logo: "https://cdn.simpleicons.org/flutter/02569B" },
+    { name: "TypeScript", level: 85, logo: "https://cdn.simpleicons.org/typescript/3178C6" },
+    { name: "Dart", level: 85, logo: "https://cdn.simpleicons.org/dart/0175C2" },
+    { name: "HTML/CSS", level: 90, logo: "https://cdn.simpleicons.org/html5/E34F26" },
+    { name: "Go", level: 75, logo: "https://cdn.simpleicons.org/go/00ADD8" },
+    { name: "REST API", level: 85, logo: "https://cdn.simpleicons.org/postman/FF6C37" },
+    { name: "PostgreSQL", level: 80, logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
+    { name: "Git", level: 85, logo: "https://cdn.simpleicons.org/git/F05032" },
+    { name: "Vue.js", level: 70, logo: "https://cdn.simpleicons.org/vuedotjs/4FC08D" },
+    { name: "React", level: 70, logo: "https://cdn.simpleicons.org/react/61DAFB" },
   ],
   projects: [
     {

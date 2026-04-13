@@ -26,7 +26,8 @@ export default defineNuxtConfig({
     provider: 'imagekit',
     imagekit: {
       baseURL: 'https://ik.imagekit.io/vc2olalw4/'
-    }
+    },
+    domains: ['cdn.simpleicons.org']
   },
 
   googleFonts: {
@@ -67,7 +68,8 @@ export default defineNuxtConfig({
         { name: 'twitter:site', content: '@isnantobudi' },
       ],
       link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/ib-logo.svg' }
+        { rel: 'icon', type: 'image/svg+xml', href: '/ib-logo.svg' },
+        { rel: 'preconnect', href: 'https://cdn.simpleicons.org' }
       ]
     }
   }
