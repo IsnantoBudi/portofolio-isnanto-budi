@@ -1,20 +1,23 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref, watch } from 'vue';
-import * as THREE from 'three';
 import { useTheme } from '../composables/useTheme';
 
 const { isDark } = useTheme();
 
 const containerRef = ref<HTMLElement | null>(null);
-let scene: THREE.Scene;
-let camera: THREE.PerspectiveCamera;
-let renderer: THREE.WebGLRenderer;
-let planetMesh: THREE.Group;
+let scene: any;
+let camera: any;
+let renderer: any;
+let planetMesh: any;
 let animationId: number;
 let observer: IntersectionObserver;
 
-const init = () => {
+let THREE: any;
+
+const init = async () => {
     if (!containerRef.value) return;
+
+    THREE = await import('three');
 
     // Scene
     scene = new THREE.Scene();
@@ -105,7 +108,7 @@ const init = () => {
 };
 
 const updateThemeColors = () => {
-    if (!planetMesh) return;
+    if (!planetMesh || !THREE) return;
     
     const { sphere, ring, satellitePivot } = planetMesh.userData;
     
@@ -114,8 +117,8 @@ const updateThemeColors = () => {
         sphere.material.opacity = isDark.value ? 0.3 : 0.15;
     }
     
-    const points = planetMesh.children.find(c => c.type === 'Points') as THREE.Points;
-    if (points && points.material instanceof THREE.PointsMaterial) {
+    const points = planetMesh.children.find((c: any) => c.type === 'Points');
+    if (points && points.material) {
         points.material.color.setHex(isDark.value ? 0x34d399 : 0x3b82f6);
     }
 
@@ -123,9 +126,9 @@ const updateThemeColors = () => {
         ring.material.color.setHex(isDark.value ? 0x6ee7b7 : 0x93c5fd);
     }
     
-    const satellite = satellitePivot.children[0] as THREE.Mesh;
+    const satellite = satellitePivot.children[0];
     if (satellite && satellite.material) {
-        (satellite.material as THREE.MeshBasicMaterial).color.setHex(isDark.value ? 0xffffff : 0x0f172a);
+        satellite.material.color.setHex(isDark.value ? 0xffffff : 0x0f172a);
     }
 };
 

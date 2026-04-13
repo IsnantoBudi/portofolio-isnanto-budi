@@ -21,11 +21,11 @@ useHead({
     <NavBar />
     <main>
       <HeroSection />
-      <AboutSection />
-      <ExperienceSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
+      <LazyAboutSection />
+      <LazyExperienceSection />
+      <LazySkillsSection />
+      <LazyProjectsSection />
+      <LazyContactSection />
     </main>
   </div>
 </template>
