@@ -83,14 +83,15 @@ onUnmounted(() => {
           <span class="block bg-gradient-to-r from-[var(--color-accent-primary)] via-[var(--color-accent-secondary)] to-[var(--color-accent-primary)] bg-[length:200%_auto] bg-clip-text shimmer-text">
             {{ portfolioData.name.split(' ').slice(1).join(' ') }}
           </span>
+          <span class="sr-only">, Full-Stack Developer & Software Engineer Jakarta, Indonesia</span>
         </h1>
 
         <!-- Title -->
-        <p
+        <h2
           class="font-display text-xl md:text-2xl text-[var(--color-text-muted)] font-light tracking-wide animate-fade-in-up animation-delay-200"
         >
           {{ portfolioData.title }}
-        </p>
+        </h2>
 
         <!-- Description -->
         <p class="max-w-2xl mx-auto text-[var(--color-text-muted)] text-base md:text-lg leading-relaxed animate-fade-in-up animation-delay-300">

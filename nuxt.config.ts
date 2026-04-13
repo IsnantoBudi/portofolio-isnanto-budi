@@ -53,8 +53,8 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Portfolio Isnanto Budi Nurrahman — Full-Stack Developer berpengalaman dalam Angular, Flutter, Go, dan arsitektur SaaS.' },
-        { name: 'keywords', content: 'Isnanto Budi Nurrahman, Software Engineer Jakarta, Full-Stack Developer Indonesia, Vue.js Developer, Flutter Developer Jakarta, SaaS Architecture' },
+        { name: 'description', content: 'Portfolio of Isnanto Budi Nurrahman, a Software Engineer and Full-Stack Developer in Jakarta, Indonesia. Specializing in Vue.js, Angular, Flutter, Go, and high-performance SaaS applications.' },
+        { name: 'keywords', content: 'Isnanto Budi Nurrahman, Software Engineer Jakarta, Full-Stack Developer Indonesia, Vue.js Developer, Flutter Developer Jakarta, SaaS Architecture, Web Development, Mobile Development, Web Developer Indonesia' },
         { name: 'author', content: 'Isnanto Budi Nurrahman' },
         { name: 'geo.region', content: 'ID-JK' },
         { name: 'geo.placename', content: 'Jakarta' },

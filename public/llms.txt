@@ -1,6 +1,6 @@
 # Isnanto Budi - Full-Stack & Mobile Developer
 
-Isnanto Budi is a Full-Stack and Mobile Developer based in Indonesia, specializing in high-performance web and mobile applications.
+Isnanto Budi Nurrahman is a Software Engineer, Full-Stack Developer, and Mobile Developer based in Jakarta, Indonesia. He specializes in high-performance web applications, SaaS multi-tenant architectures, and premium mobile experiences using Vue.js, Angular, Flutter, and Go.
 
 ## Core Expertise
 - **Frontend**: Vue.js, Vite, Tailwind CSS, TypeScript
@@ -16,4 +16,4 @@ Isnanto Budi is a Full-Stack and Mobile Developer based in Indonesia, specializi
 ## Contact & Links
 - **GitHub**: https://github.com/IsnantoBudi
 - **LinkedIn**: https://www.linkedin.com/in/isnanto-budi/
-- **Website**: https://portofolio-vue-gules.vercel.app/
+- **Website**: https://www.isnantobudi.online/

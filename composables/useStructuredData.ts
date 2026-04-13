@@ -51,7 +51,12 @@ export const useStructuredData = () => {
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Jakarta',
+      addressRegion: 'Jakarta Raya',
       addressCountry: 'ID'
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Indonesia'
     },
     priceRange: '$$',
     description: 'Expert Software Development services in Jakarta, specializing in Vue.js, Angular, Flutter, and Go.'
@@ -73,6 +78,25 @@ export const useStructuredData = () => {
     }))
   };
 
+  const profilePageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    dateCreated: '2024-01-01T00:00:00+00:00',
+    dateModified: new Date().toISOString(),
+    mainEntity: personSchema
+  };
+
+  const breadcrumbListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [{
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: baseUrl
+    }]
+  };
+
   useHead({
     script: [
       {
@@ -90,6 +114,14 @@ export const useStructuredData = () => {
       {
         type: 'application/ld+json',
         innerHTML: JSON.stringify(projectListSchema)
+      },
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(profilePageSchema)
+      },
+      {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(breadcrumbListSchema)
       }
     ]
   });
