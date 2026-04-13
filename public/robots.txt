@@ -1,24 +1,50 @@
-User-agent: *
-Allow: /
+# ============================================================
+# robots.txt — isnantobudi.online
+# Updated: 2026-04-13
+# ============================================================
 
-# AI Crawler Management
-User-agent: GPTBot
-Disallow: /
-User-agent: ChatGPT-User
-Disallow: /
-User-agent: ClaudeBot
-Disallow: /
-User-agent: Claude-Web
-Disallow: /
+# --- AI Training Crawlers (Block) ---
+# These crawlers collect data for AI model training.
+# Blocking them does NOT affect AI search citations.
+
 User-agent: CCBot
 Disallow: /
-User-agent: PerplexityBot
-Disallow: /
-User-agent: Applebot-Extended
-Disallow: /
+
 User-agent: Google-Extended
 Disallow: /
+
 User-agent: Bytespider
 Disallow: /
 
+User-agent: Applebot-Extended
+Disallow: /
+
+# --- AI Search Crawlers (Allow) ---
+# These crawlers power AI-generated answers in ChatGPT, Claude,
+# and Perplexity. Allowing them enables AI search citations and
+# increases visibility in AI Overviews and AI answer engines.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# --- General Crawlers ---
+# Allow all standard search engine bots (Googlebot, Bingbot, etc.)
+
+User-agent: *
+Allow: /
+Crawl-delay: 0
+
+# --- Sitemap ---
 Sitemap: https://www.isnantobudi.online/sitemap.xml

@@ -1,19 +1,36 @@
-# Isnanto Budi - Full-Stack & Mobile Developer
+# Isnanto Budi Nurrahman — Full-Stack & Mobile Developer
 
-Isnanto Budi Nurrahman is a Software Engineer, Full-Stack Developer, and Mobile Developer based in Jakarta, Indonesia. He specializes in high-performance web applications, SaaS multi-tenant architectures, and premium mobile experiences using Vue.js, Angular, Flutter, and Go.
+> Isnanto Budi Nurrahman is a Software Engineer and Full-Stack Developer based in Jakarta, Indonesia. He specializes in high-performance SaaS web applications, multi-tenant architectures, insurance technology platforms, and modern mobile applications. His primary tech stack includes Vue.js, Angular, Flutter, Go, TypeScript, and Node.js.
+
+## Key Pages
+
+- `Home -> https://www.isnantobudi.online/`: Portfolio homepage with an overview of skills, projects, and professional experience.
+- `TenantMaster Project -> https://www.isnantobudi.online/tenant-master`: A multi-tenant enterprise cloud application with role-based access control and white-label SaaS architecture.
+- `Insurance Web -> https://www.isnantobudi.online/insurance-web`: Full-stack web platform for the insurance industry, featuring real-time policy management and claims processing.
+- `Insurance Mobile -> https://www.isnantobudi.online/insurance-mobile`: Cross-platform mobile application for insurance agents and customers, built with Flutter.
+- `SyncBoard -> https://www.isnantobudi.online/sync-board`: Real-time collaborative task board built with Go (backend) and Next.js (frontend), powered by WebSocket.
+- `AjarVisual -> https://www.isnantobudi.online/ajar-visual`: AI-powered educational worksheet generator for teachers, integrating Google Gemini and Hugging Face APIs.
 
 ## Core Expertise
-- **Frontend**: Vue.js, Vite, Tailwind CSS, TypeScript
-- **Backend**: Node.js, Express, PostgreSQL, SaaS Multi-tenant architecture
-- **Mobile**: Flutter, React Native
-- **Design**: Modern, interactive UI with dark mode, glassmorphism, and smooth animations.
 
-## Key Projects
-- **TenantMaster**: A multi-tenant cloud application for enterprise management.
-- **Insurance App**: Modern mobile solution for the insurance industry.
-- **IB Portofolio**: A high-end developer portfolio with interactive spotlights and 3D effects.
+- **Frontend**: Vue.js 3, Nuxt 3, Angular 17+, TypeScript, Tailwind CSS
+- **Backend**: Go (Fiber), Node.js, Express, REST API, WebSocket
+- **Mobile**: Flutter (Android & iOS), cross-platform deployment
+- **Database**: PostgreSQL, TiDB, MySQL
+- **Architecture**: Multi-tenant SaaS, microservices, real-time collaboration systems
+- **AI Integration**: Google Gemini API, Hugging Face Inference API
 
-## Contact & Links
+## Professional Summary
+
+Isnanto Budi Nurrahman has 3+ years of professional software engineering experience specializing in enterprise-grade SaaS platforms and insurance technology in Jakarta, Indonesia. He has delivered 20+ production projects ranging from multi-tenant cloud management systems to AI-powered educational tools and real-time collaboration applications.
+
+## Contact & Social Profiles
+
+- **Website**: https://www.isnantobudi.online/
 - **GitHub**: https://github.com/IsnantoBudi
 - **LinkedIn**: https://www.linkedin.com/in/isnanto-budi/
-- **Website**: https://www.isnantobudi.online/
+- **Email**: isnantobudi.dev@gmail.com
+
+## Sitemap
+
+https://www.isnantobudi.online/sitemap.xml
