@@ -75,17 +75,17 @@ export const portfolioData: Profile = {
     }
   ],
   skills: [
-    { name: "Angular", level: 90, logo: "https://cdn.simpleicons.org/angular/DD0031" },
-    { name: "Flutter", level: 90, logo: "https://cdn.simpleicons.org/flutter/02569B" },
-    { name: "TypeScript", level: 85, logo: "https://cdn.simpleicons.org/typescript/3178C6" },
-    { name: "Dart", level: 85, logo: "https://cdn.simpleicons.org/dart/0175C2" },
-    { name: "HTML/CSS", level: 90, logo: "https://cdn.simpleicons.org/html5/E34F26" },
-    { name: "Go", level: 75, logo: "https://cdn.simpleicons.org/go/00ADD8" },
-    { name: "REST API", level: 85, logo: "https://cdn.simpleicons.org/postman/FF6C37" },
-    { name: "PostgreSQL", level: 80, logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
-    { name: "Git", level: 85, logo: "https://cdn.simpleicons.org/git/F05032" },
-    { name: "Vue.js", level: 70, logo: "https://cdn.simpleicons.org/vuedotjs/4FC08D" },
-    { name: "React", level: 70, logo: "https://cdn.simpleicons.org/react/61DAFB" },
+    { name: "Angular", level: 100, logo: "https://cdn.simpleicons.org/angular/DD0031" },
+    { name: "Flutter", level: 100, logo: "https://cdn.simpleicons.org/flutter/02569B" },
+    { name: "TypeScript", level: 100, logo: "https://cdn.simpleicons.org/typescript/3178C6" },
+    { name: "Dart", level: 100, logo: "https://cdn.simpleicons.org/dart/0175C2" },
+    { name: "HTML/CSS", level: 100, logo: "https://cdn.simpleicons.org/html5/E34F26" },
+    { name: "Go", level: 100, logo: "https://cdn.simpleicons.org/go/00ADD8" },
+    { name: "REST API", level: 100, logo: "https://cdn.simpleicons.org/postman/FF6C37" },
+    { name: "PostgreSQL", level: 100, logo: "https://cdn.simpleicons.org/postgresql/4169E1" },
+    { name: "Git", level: 100, logo: "https://cdn.simpleicons.org/git/F05032" },
+    { name: "Vue.js", level: 100, logo: "https://cdn.simpleicons.org/vuedotjs/4FC08D" },
+    { name: "React", level: 100, logo: "https://cdn.simpleicons.org/react/61DAFB" },
   ],
   projects: [
     {

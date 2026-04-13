@@ -73,7 +73,7 @@ onMounted(() => {
                 :style="{ width: barsVisible ? `${skill.level}%` : '0%' }"
               ></div>
             </div>
-            <span class="text-xs text-[var(--color-text-muted)] tabular-nums">{{ skill.level }}%</span>
+            <!-- <span class="text-xs text-[var(--color-text-muted)] tabular-nums">{{ skill.level }}%</span> -->
           </div>
         </div>
       </div>
