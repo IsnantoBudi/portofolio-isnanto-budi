@@ -36,15 +36,9 @@ let THREE: any;
 const init = async () => {
   if (!containerRef.value) return;
 
-  // Gunakan global `THREE` dari jsDelivr CDN jika sudah tersedia (production).
-  // Fallback ke dynamic import untuk dev mode / lingkungan tanpa CDN.
-  // @ts-ignore
-  if (typeof window !== 'undefined' && window.THREE) {
-    // @ts-ignore
-    THREE = window.THREE;
-  } else {
-    THREE = await import('three');
-  }
+  // Dynamically import three.js via ES Module Import Map (resolves to jsDelivr CDN)
+  // This completely removes three.js from the mobile JS payload and evaluation
+  THREE = await import('three');
 
   windowHalfX = window.innerWidth / 2;
   windowHalfY = window.innerHeight / 2;

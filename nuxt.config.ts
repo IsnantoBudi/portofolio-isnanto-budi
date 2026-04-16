@@ -28,10 +28,10 @@ export default defineNuxtConfig({
       // Pisah CSS per komponen untuk lazy loading yang lebih efisien
       cssCodeSplit: true,
       rollupOptions: {
+        // Jangan bundle three.js ke dalam chunk kita
+        external: ['three'],
         output: {
           // Pisahkan vendor chunk agar browser dapat cache library secara terpisah.
-          // three.js akan di-chunk sendiri karena besar — tapi di runtime production
-          // window.THREE dari jsDelivr digunakan, sehingga chunk ini tidak di-fetch.
           manualChunks(id) {
             if (id.includes('node_modules')) {
               if (id.includes('three'))         return 'vendor-three'    // ~600KB, cached
@@ -100,21 +100,18 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: '' },
         { rel: 'dns-prefetch', href: 'https://cdn.jsdelivr.net' },
         { rel: 'preconnect', href: 'https://cdn.simpleicons.org' },
-        // Preload three.js (UMD) dari jsDelivr sesegera mungkin
+        // Module preload untuk modern browser agar fetch paralel saat parsing JS lain
         {
-          rel: 'preload',
-          as: 'script',
-          href: `${JSDELIVR}/three@${THREE_VERSION}/build/three.min.js`,
+          rel: 'modulepreload',
+          href: `${JSDELIVR}/three@${THREE_VERSION}/build/three.module.min.js`,
           crossorigin: 'anonymous'
         }
       ],
       script: [
-        // Load Three.js dari jsDelivr CDN sebagai global (UMD build)
-        // Di-load SEBELUM bundle utama agar `THREE` tersedia saat diperlukan
+        // Gunakan ES Module Import Map agar `import('three')` langsung fetch dari CDN
         {
-          src: `${JSDELIVR}/three@${THREE_VERSION}/build/three.min.js`,
-          defer: true,
-          crossorigin: 'anonymous'
+          type: 'importmap',
+          innerHTML: `{"imports": {"three": "${JSDELIVR}/three@${THREE_VERSION}/build/three.module.min.js"}}`
         }
       ]
     }
