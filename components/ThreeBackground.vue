@@ -36,9 +36,15 @@ let THREE: any;
 const init = async () => {
   if (!containerRef.value) return;
 
-  // Dynamically import three.js ONLY when init is called (desktop only)
-  // This completely removes three.js from the mobile JS payload and evaluation
-  THREE = await import('three');
+  // Gunakan global `THREE` dari jsDelivr CDN jika sudah tersedia (production).
+  // Fallback ke dynamic import untuk dev mode / lingkungan tanpa CDN.
+  // @ts-ignore
+  if (typeof window !== 'undefined' && window.THREE) {
+    // @ts-ignore
+    THREE = window.THREE;
+  } else {
+    THREE = await import('three');
+  }
 
   windowHalfX = window.innerWidth / 2;
   windowHalfY = window.innerHeight / 2;

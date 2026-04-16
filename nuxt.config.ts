@@ -1,4 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+// jsDelivr CDN base — versi dikunci agar hasil build deterministik
+const JSDELIVR = 'https://cdn.jsdelivr.net/npm'
+const THREE_VERSION = '0.182.0'
+
 export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: '2024-11-01',
@@ -15,6 +20,28 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'vercel'
+  },
+
+  // Optimasi build Vite dengan chunk splitting & jsDelivr CDN
+  vite: {
+    build: {
+      // Pisah CSS per komponen untuk lazy loading yang lebih efisien
+      cssCodeSplit: true,
+      rollupOptions: {
+        output: {
+          // Pisahkan vendor chunk agar browser dapat cache library secara terpisah.
+          // three.js akan di-chunk sendiri karena besar — tapi di runtime production
+          // window.THREE dari jsDelivr digunakan, sehingga chunk ini tidak di-fetch.
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              if (id.includes('three'))         return 'vendor-three'    // ~600KB, cached
+              if (id.includes('lucide-vue-next')) return 'vendor-lucide' // icons
+              return 'vendor'                                             // misc vendor
+            }
+          }
+        }
+      }
+    }
   },
 
   modules: [
@@ -69,7 +96,26 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/ib-logo.svg' },
-        { rel: 'preconnect', href: 'https://cdn.simpleicons.org' }
+        // Preconnect ke jsDelivr agar handshake selesai sebelum script diminta
+        { rel: 'preconnect', href: 'https://cdn.jsdelivr.net', crossorigin: '' },
+        { rel: 'dns-prefetch', href: 'https://cdn.jsdelivr.net' },
+        { rel: 'preconnect', href: 'https://cdn.simpleicons.org' },
+        // Preload three.js (UMD) dari jsDelivr sesegera mungkin
+        {
+          rel: 'preload',
+          as: 'script',
+          href: `${JSDELIVR}/three@${THREE_VERSION}/build/three.min.js`,
+          crossorigin: 'anonymous'
+        }
+      ],
+      script: [
+        // Load Three.js dari jsDelivr CDN sebagai global (UMD build)
+        // Di-load SEBELUM bundle utama agar `THREE` tersedia saat diperlukan
+        {
+          src: `${JSDELIVR}/three@${THREE_VERSION}/build/three.min.js`,
+          defer: true,
+          crossorigin: 'anonymous'
+        }
       ]
     }
   }

@@ -42,6 +42,9 @@ Allow: /
 # --- General Crawlers ---
 # Allow all standard search engine bots (Googlebot, Bingbot, etc.)
 
+User-agent: *
+Allow: /
+Crawl-delay: 0
 
 # --- Sitemap ---
 Sitemap: https://www.isnantobudi.online/sitemap.xml
